@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-web3-07">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S7 · Animación web | Desarrollo web: HTML, CSS y animación</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260710093000WEB3SDA","packageTitle":"Desarrollo web: HTML, CSS y animación","language":"es"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-web3-07" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node no-ch">Desarrollo web · Inicio</a>
+</li>
+<li> <a href="../html/s1-www-y-servidores.html" class="no-ch">S1 · WWW y servidores</a>
+</li>
+<li> <a href="../html/s2-estructura-y-herramientas.html" class="no-ch">S2 · Estructura y herramientas</a>
+</li>
+<li> <a href="../html/s3-primeros-pasos-en-html.html" class="no-ch">S3 · Primeros pasos en HTML</a>
+</li>
+<li> <a href="../html/s4-practicas-html-e-imagenes.html" class="no-ch">S4 · Prácticas HTML e imágenes</a>
+</li>
+<li> <a href="../html/s5-introduccion-a-css.html" class="no-ch">S5 · Introducción a CSS</a>
+</li>
+<li> <a href="../html/s6-selectores-y-estilos-css.html" class="no-ch">S6 · Selectores y estilos CSS</a>
+</li>
+<li class="active"> <a href="../html/s7-animacion-web.html" class="active no-ch">S7 · Animación web</a>
+</li>
+<li> <a href="../html/s8-web-propia-final-y-entrega.html" class="no-ch">S8 · Web propia final y entrega</a>
+</li>
+<li> <a href="../html/chuleta-de-html-y-css.html" class="no-ch">Chuleta de HTML y CSS</a>
+</li>
+<li> <a href="../html/checklist-de-entrega.html" class="no-ch">Checklist de entrega</a>
+</li>
+</ul>
+</nav><main id="page-web3-07" class="page"> 
+<header class="main-header"> <p class="page-counter"> <span class="page-counter-label">Página </span><span class="page-counter-content"> <strong class="page-counter-current-page">8</strong><span class="page-counter-sep">/</span><strong class="page-counter-total">11</strong></span></p>
+
+<div class="package-header"><p class="package-title">Desarrollo web: HTML, CSS y animación</p></div>
+<div class="page-header"><h1 class="page-title">S7 · Animación web</h1></div>
+</header><div id="page-content-page-web3-07" class="page-content">
+<article id="block-web3-07" class="box no-header">
+<header class="box-head no-icon">
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idev-web3-07" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idev-web3-07&quot;}">
+
+<div class="bloque bloque-teoria">
+  <p class="bloque-titulo">¡Que se mueva!</p>
+  <p>Una animación hace tu página más viva y llamativa. Hay varias formas de conseguir movimiento en la web; vamos a ver los <strong>formatos</strong> y las <strong>herramientas</strong>, y luego harás tu propia animación con CSS. Tu web final debe llevar <strong>al menos una animación</strong>.</p>
+</div>
+
+<h2>Formatos de animación en la web</h2>
+<table class="tabla-datos">
+  <thead><tr><th>Formato</th><th>Qué es</th><th>Cómo se pone</th></tr></thead>
+  <tbody>
+    <tr><td><strong>GIF animado</strong></td><td>Una imagen que se mueve sola en bucle (como los memes). Pesa bastante.</td><td>Con <code>&lt;img&gt;</code>, igual que una foto.</td></tr>
+    <tr><td><strong>SVG animado</strong></td><td>Un dibujo hecho con código (líneas, formas) que puede moverse. Se ve nítido a cualquier tamaño.</td><td>Con <code>&lt;img&gt;</code> o pegando el código SVG.</td></tr>
+    <tr><td><strong>Vídeo</strong></td><td>Un vídeo incrustado en la página, con controles de reproducción.</td><td>Con <code>&lt;video&gt;</code>.</td></tr>
+    <tr><td><strong>Transición CSS</strong></td><td>Un cambio <em>suave</em> al pasar el ratón. La más fácil y la que vas a usar.</td><td>Con <code>transition</code> y <code>:hover</code>.</td></tr>
+    <tr><td><strong>Animación CSS</strong></td><td>Un movimiento que se repite solo, sin tocar nada.</td><td>Con <code>@keyframes</code> y <code>animation</code>.</td></tr>
+  </tbody>
+</table>
+<div class="bloque bloque-resuelto">
+  <p class="bloque-titulo">Incrustar un vídeo (cópialo)</p>
+<pre><code>&lt;video src=&quot;mi_video.mp4&quot; controls width=&quot;400&quot;&gt;&lt;/video&gt;</code></pre>
+<p><code>controls</code> muestra los botones de reproducir/pausa.</p>
+</div>
+
+<h2>Herramientas útiles (web, sin instalar ni cuenta)</h2>
+<ul>
+  <li><a href="https://ezgif.com/" target="_blank" rel="noopener">ezgif.com</a> → crear y recortar GIF animados en el navegador.</li>
+  <li><a href="https://giphy.com/" target="_blank" rel="noopener">giphy.com</a> → banco de GIF (revisa siempre que puedas reutilizarlo).</li>
+  <li><a href="https://openverse.org/es" target="_blank" rel="noopener">Openverse</a> → también encuentra GIF y SVG con licencia libre.</li>
+</ul>
+<div class="bloque bloque-nota">
+  <p class="bloque-titulo">Recuerda las licencias</p>
+  <p>Un GIF o un vídeo también tienen dueño. Si lo descargas de internet, que sea de un banco libre y <strong>atribúyelo</strong>, igual que hiciste con las imágenes en la S4.</p>
+</div>
+
+<h2>Mínimo común: una transición al pasar el ratón</h2>
+<p>Con dos líneas de CSS puedes hacer que algo cambie <strong>suavemente</strong> cuando el ratón pasa por encima. La palabra clave <code>:hover</code> significa «cuando el ratón está encima».</p>
+<div class="bloque bloque-resuelto">
+  <p class="bloque-titulo">Un título que crece y cambia de color (cópialo)</p>
+<pre><code>&lt;style&gt;
+  h1 {
+    color: #453f93;
+    transition: all 0.4s;   /* el cambio dura 0,4 segundos */
+  }
+  h1:hover {
+    color: orange;
+    font-size: 45px;        /* al pasar el ratón, se agranda */
+  }
+&lt;/style&gt;</code></pre>
+<p>Pon el ratón encima del <code>&lt;h1&gt;</code> y verás cómo cambia poco a poco. La clave es <code>transition</code>: sin ella, el cambio sería brusco.</p>
+</div>
+
+<h2>Extensión: una animación que se mueve sola</h2>
+<p>Con <code>@keyframes</code> defines un movimiento y con <code>animation</code> se lo aplicas a un elemento. Se repite solo, sin tocar nada.</p>
+<div class="bloque bloque-resuelto">
+  <p class="bloque-titulo">Un título que «late» (cópialo)</p>
+<pre><code>&lt;style&gt;
+  @keyframes latido {
+    0%   { transform: scale(1);   }
+    50%  { transform: scale(1.2); }  /* a la mitad, más grande */
+    100% { transform: scale(1);   }
+  }
+  h1 {
+    animation: latido 1.5s infinite;  /* se repite sin parar */
+  }
+&lt;/style&gt;</code></pre>
+</div>
+<div class="bloque bloque-resuelto">
+  <p class="bloque-titulo">Otra idea: un elemento que se desliza al entrar (cópialo)</p>
+<pre><code>&lt;style&gt;
+  @keyframes entra {
+    from { transform: translateX(-100px); opacity: 0; }
+    to   { transform: translateX(0);      opacity: 1; }
+  }
+  .tarjeta { animation: entra 1s; }
+&lt;/style&gt;</code></pre>
+</div>
+
+<div class="bloque bloque-formula">
+  <p class="bloque-titulo">Consejo de buen gusto</p>
+  <p>Una animación llama la atención… si no hay veinte a la vez. Con <strong>una o dos</strong> bien elegidas tu página gana mucho; si son demasiadas, marea.</p>
+</div>
+
+<div class="bloque bloque-actividad">
+  <p class="bloque-titulo">Tarea S7 · Mi página se mueve</p>
+  <p>Incorpora a tu página <strong>al menos una animación</strong>. Puedes elegir:</p>
+  <ul>
+    <li><strong>Mínimo común:</strong> una <strong>transición</strong> con <code>:hover</code> (un título o una imagen que cambie de color o tamaño al pasar el ratón).</li>
+    <li><strong>Extensión:</strong> una <strong>animación</strong> con <code>@keyframes</code> que se mueva sola, un <strong>GIF</strong> animado con licencia libre o un <strong>vídeo</strong>.</li>
+  </ul>
+  <p>Esta tarea ya forma parte de tu <strong>página personal final</strong>. Guarda tu archivo con el nombre <code>s7.html</code> y súbelo a Google Classroom.</p>
+  <p><strong>Nombre del archivo:</strong> <code>s7.html</code></p>
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/s6-selectores-y-estilos-css.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/s8-web-propia-final-y-entrega.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class=""> <p> <span class="license-label">Licencia: </span><span class="license">creative commons: attribution - share alike</span></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

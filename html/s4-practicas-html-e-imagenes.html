@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-web3-04">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S4 · Prácticas HTML e imágenes | Desarrollo web: HTML, CSS y animación</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260710093000WEB3SDA","packageTitle":"Desarrollo web: HTML, CSS y animación","language":"es"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-web3-04" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node no-ch">Desarrollo web · Inicio</a>
+</li>
+<li> <a href="../html/s1-www-y-servidores.html" class="no-ch">S1 · WWW y servidores</a>
+</li>
+<li> <a href="../html/s2-estructura-y-herramientas.html" class="no-ch">S2 · Estructura y herramientas</a>
+</li>
+<li> <a href="../html/s3-primeros-pasos-en-html.html" class="no-ch">S3 · Primeros pasos en HTML</a>
+</li>
+<li class="active"> <a href="../html/s4-practicas-html-e-imagenes.html" class="active no-ch">S4 · Prácticas HTML e imágenes</a>
+</li>
+<li> <a href="../html/s5-introduccion-a-css.html" class="no-ch">S5 · Introducción a CSS</a>
+</li>
+<li> <a href="../html/s6-selectores-y-estilos-css.html" class="no-ch">S6 · Selectores y estilos CSS</a>
+</li>
+<li> <a href="../html/s7-animacion-web.html" class="no-ch">S7 · Animación web</a>
+</li>
+<li> <a href="../html/s8-web-propia-final-y-entrega.html" class="no-ch">S8 · Web propia final y entrega</a>
+</li>
+<li> <a href="../html/chuleta-de-html-y-css.html" class="no-ch">Chuleta de HTML y CSS</a>
+</li>
+<li> <a href="../html/checklist-de-entrega.html" class="no-ch">Checklist de entrega</a>
+</li>
+</ul>
+</nav><main id="page-web3-04" class="page"> 
+<header class="main-header"> <p class="page-counter"> <span class="page-counter-label">Página </span><span class="page-counter-content"> <strong class="page-counter-current-page">5</strong><span class="page-counter-sep">/</span><strong class="page-counter-total">11</strong></span></p>
+
+<div class="package-header"><p class="package-title">Desarrollo web: HTML, CSS y animación</p></div>
+<div class="page-header"><h1 class="page-title">S4 · Prácticas HTML e imágenes</h1></div>
+</header><div id="page-content-page-web3-04" class="page-content">
+<article id="block-web3-04" class="box no-header">
+<header class="box-head no-icon">
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idev-web3-04" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idev-web3-04&quot;}">
+
+<div class="bloque bloque-teoria">
+  <p class="bloque-titulo">Listas, enlaces, tablas… e imágenes con cabeza</p>
+  <p>Hoy enriqueces tu página con listas, enlaces y tablas, y aprendes a poner imágenes <strong>de forma legal</strong>. Porque <strong>no se puede usar cualquier imagen de internet</strong>: la mayoría tienen dueño y usarlas sin permiso está mal (y puede ser ilegal).</p>
+</div>
+
+<h2>Listas</h2>
+<div class="bloque bloque-resuelto">
+<pre><code>&lt;ul&gt;                     &lt;!-- lista desordenada (viñetas) --&gt;
+  &lt;li&gt;Baloncesto&lt;/li&gt;
+  &lt;li&gt;Fútbol&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;                     &lt;!-- lista ordenada (números) --&gt;
+  &lt;li&gt;Primero&lt;/li&gt;
+  &lt;li&gt;Segundo&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+<p>Cada elemento de la lista va dentro de un <code>&lt;li&gt;</code>. Usa <code>&lt;ul&gt;</code> si el orden da igual y <code>&lt;ol&gt;</code> si importa.</p>
+</div>
+
+<h2>Enlaces</h2>
+<p>Un enlace se hace con la etiqueta <code>&lt;a&gt;</code> y su atributo <code>href</code> (la dirección de destino). Para que se abra en una pestaña nueva y de forma segura, añade siempre <code>target="_blank" rel="noopener"</code>.</p>
+<div class="bloque bloque-resuelto">
+<pre><code>&lt;a href=&quot;https://es.wikipedia.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ir a la Wikipedia&lt;/a&gt;</code></pre>
+</div>
+
+<h2>Tablas</h2>
+<div class="bloque bloque-resuelto">
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Jugador&lt;/th&gt;&lt;th&gt;Dorsal&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Marta&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<p><code>&lt;tr&gt;</code> es una fila, <code>&lt;th&gt;</code> una celda de cabecera (en negrita) y <code>&lt;td&gt;</code> una celda normal.</p>
+</div>
+
+<h2>Insertar una imagen</h2>
+<p>Se usa la etiqueta <code>&lt;img&gt;</code>, que <strong>no se cierra</strong>. Tiene dos atributos importantes:</p>
+<div class="bloque bloque-resuelto">
+<pre><code>&lt;img src=&quot;https://.../foto.jpg&quot; alt=&quot;Un balón de baloncesto&quot; width=&quot;300&quot;&gt;</code></pre>
+<ul>
+  <li><code>src="..."</code> → la <strong>dirección</strong> de la imagen (de dónde se coge).</li>
+  <li><code>alt="..."</code> → un <strong>texto que describe</strong> la imagen. Lo leen las personas con problemas de visión y aparece si la imagen no carga. Ponlo siempre.</li>
+  <li><code>width="300"</code> → el <strong>ancho</strong> en píxeles (opcional).</li>
+</ul>
+</div>
+
+<h2>¿De dónde saco imágenes que SÍ puedo usar?</h2>
+<p>De los <strong>buscadores de imágenes libres</strong>. Ahí las imágenes tienen licencias que permiten reutilizarlas. Dos muy buenos y sin necesidad de cuenta:</p>
+<ul>
+  <li><a href="https://openverse.org/es" target="_blank" rel="noopener">Openverse</a> → buscador de imágenes con licencia Creative Commons.</li>
+  <li><a href="https://pixabay.com/es/" target="_blank" rel="noopener">Pixabay</a> → imágenes de uso libre.</li>
+</ul>
+<div class="bloque bloque-formula">
+  <p class="bloque-titulo">¿Qué es una licencia Creative Commons (CC)?</p>
+  <p>Es un permiso que el autor da para que otras personas usen su obra, normalmente con una condición: <strong>citar quién la hizo</strong>. Es la forma legal y justa de compartir. Al usar una imagen CC, tú también debes decir de quién es: eso se llama <strong>atribución</strong>. Enlazamos así con lo que viste en la unidad de ciberseguridad sobre propiedad intelectual.</p>
+</div>
+
+<h2>Cómo atribuir una imagen correctamente</h2>
+<p>Debajo de la imagen (o al final de la página) escribe una línea con estos cuatro datos: <strong>título, autor, licencia y enlace</strong>.</p>
+<div class="bloque bloque-resuelto">
+  <p class="bloque-titulo">Ejemplo de atribución (cópialo y adáptalo)</p>
+<pre><code>&lt;img src=&quot;https://.../gato.jpg&quot; alt=&quot;Un gato naranja&quot; width=&quot;300&quot;&gt;
+&lt;p&gt;
+  «Gato naranja» de Ana Pérez, licencia CC BY,
+  &lt;a href=&quot;https://openverse.org/...&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ver original&lt;/a&gt;.
+&lt;/p&gt;</code></pre>
+</div>
+<div class="bloque bloque-nota">
+  <p class="bloque-titulo">Truco</p>
+  <p>En Openverse, cuando eliges una imagen, la propia web te da la atribución <strong>ya escrita</strong> para copiar. ¡Aprovéchalo!</p>
+</div>
+
+<div class="bloque bloque-actividad">
+  <p class="bloque-titulo">Tarea S4 · Amplía tu página con imágenes con licencia</p>
+  <p>Abre tu <code>s3.html</code> y añádele:</p>
+  <ol>
+    <li>Una <strong>lista</strong> (<code>&lt;ul&gt;</code> u <code>&lt;ol&gt;</code>) relacionada con tu tema.</li>
+    <li>Un <strong>enlace</strong> con <code>target="_blank" rel="noopener"</code> que funcione.</li>
+    <li>Al menos <strong>una imagen</strong> buscada en Openverse o Pixabay, con su <code>alt</code> bien escrito.</li>
+    <li>La <strong>atribución</strong> de esa imagen debajo: título, autor, licencia y enlace al original.</li>
+  </ol>
+  <p>Guarda tu archivo con el nombre <code>s4.html</code> y súbelo a Google Classroom.</p>
+  <p><strong>Nombre del archivo:</strong> <code>s4.html</code></p>
+  <div class="bloque bloque-nota">
+    <p class="bloque-titulo">Ojo, esto se evalúa</p>
+    <p>Usar imágenes libres y atribuirlas bien <strong>puntúa</strong> en esta unidad. Una imagen sin atribución cuenta como no válida.</p>
+  </div>
+  <div class="bloque bloque-dua">
+    <p class="bloque-titulo">Ampliación (opcional)</p>
+    <p>Añade una tabla y una segunda imagen. Averigua qué significan las siglas <strong>CC BY</strong>, <strong>CC BY-SA</strong> y <strong>CC0</strong> y en qué se diferencian.</p>
+  </div>
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/s3-primeros-pasos-en-html.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/s5-introduccion-a-css.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class=""> <p> <span class="license-label">Licencia: </span><span class="license">creative commons: attribution - share alike</span></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

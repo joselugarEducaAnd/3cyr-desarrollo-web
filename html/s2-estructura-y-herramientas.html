@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-web3-02">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S2 · Estructura y herramientas | Desarrollo web: HTML, CSS y animación</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260710093000WEB3SDA","packageTitle":"Desarrollo web: HTML, CSS y animación","language":"es"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-web3-02" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node no-ch">Desarrollo web · Inicio</a>
+</li>
+<li> <a href="../html/s1-www-y-servidores.html" class="no-ch">S1 · WWW y servidores</a>
+</li>
+<li class="active"> <a href="../html/s2-estructura-y-herramientas.html" class="active no-ch">S2 · Estructura y herramientas</a>
+</li>
+<li> <a href="../html/s3-primeros-pasos-en-html.html" class="no-ch">S3 · Primeros pasos en HTML</a>
+</li>
+<li> <a href="../html/s4-practicas-html-e-imagenes.html" class="no-ch">S4 · Prácticas HTML e imágenes</a>
+</li>
+<li> <a href="../html/s5-introduccion-a-css.html" class="no-ch">S5 · Introducción a CSS</a>
+</li>
+<li> <a href="../html/s6-selectores-y-estilos-css.html" class="no-ch">S6 · Selectores y estilos CSS</a>
+</li>
+<li> <a href="../html/s7-animacion-web.html" class="no-ch">S7 · Animación web</a>
+</li>
+<li> <a href="../html/s8-web-propia-final-y-entrega.html" class="no-ch">S8 · Web propia final y entrega</a>
+</li>
+<li> <a href="../html/chuleta-de-html-y-css.html" class="no-ch">Chuleta de HTML y CSS</a>
+</li>
+<li> <a href="../html/checklist-de-entrega.html" class="no-ch">Checklist de entrega</a>
+</li>
+</ul>
+</nav><main id="page-web3-02" class="page"> 
+<header class="main-header"> <p class="page-counter"> <span class="page-counter-label">Página </span><span class="page-counter-content"> <strong class="page-counter-current-page">3</strong><span class="page-counter-sep">/</span><strong class="page-counter-total">11</strong></span></p>
+
+<div class="package-header"><p class="package-title">Desarrollo web: HTML, CSS y animación</p></div>
+<div class="page-header"><h1 class="page-title">S2 · Estructura y herramientas</h1></div>
+</header><div id="page-content-page-web3-02" class="page-content">
+<article id="block-web3-02" class="box no-header">
+<header class="box-head no-icon">
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idev-web3-02" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idev-web3-02&quot;}">
+
+<div class="bloque bloque-teoria">
+  <p class="bloque-titulo">Antes de programar, mira cómo están hechas</p>
+  <p>Casi todas las páginas web comparten una misma <strong>estructura</strong> y se construyen con unas <strong>herramientas</strong> y unos <strong>lenguajes</strong> parecidos. Conocerlos te ayudará a diseñar la tuya con criterio.</p>
+</div>
+
+<h2>Las tres partes de una página</h2>
+<figure>
+<svg viewBox="0 0 460 300" role="img" aria-label="Estructura de una página: cabecera, cuerpo y pie" xmlns="http://www.w3.org/2000/svg">
+  <title>Cabecera, cuerpo y pie</title>
+  <rect x="40" y="20" width="380" height="60" rx="6" fill="#efe9f7" stroke="#453f93" stroke-width="2"/>
+  <text x="230" y="46" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#3a2f6b">Cabecera (header)</text>
+  <text x="230" y="66" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5f6b">logo · menú · buscador</text>
+  <rect x="40" y="90" width="380" height="120" rx="6" fill="#eef4fb" stroke="#2f6fb0" stroke-width="2"/>
+  <text x="230" y="140" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#1b4d7e">Cuerpo (body)</text>
+  <text x="230" y="162" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5f6b">el contenido principal (distinto en cada página)</text>
+  <rect x="40" y="220" width="380" height="55" rx="6" fill="#eaf5ee" stroke="#2a7d4f" stroke-width="2"/>
+  <text x="230" y="244" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#1c5c39">Pie (footer)</text>
+  <text x="230" y="263" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5f6b">contacto · redes · aviso legal</text>
+</svg>
+<figcaption>Cabecera y pie se repiten en todas las páginas del sitio; el cuerpo cambia en cada una.</figcaption>
+</figure>
+<ul>
+  <li><strong>Cabecera (header):</strong> la parte de arriba. Suele llevar el logo, el menú de navegación y un buscador. Es igual en todas las páginas del sitio.</li>
+  <li><strong>Cuerpo (body):</strong> el contenido principal. Es diferente en cada página (no es lo mismo la portada que la página de contacto).</li>
+  <li><strong>Pie (footer):</strong> la parte de abajo. Suele llevar información de contacto, redes sociales y enlaces legales. También se repite.</li>
+</ul>
+
+<h2>Herramientas del desarrollo web</h2>
+<p>Un desarrollador combina texto, colores, fotos, iconos y vídeos. Para ello usa herramientas de varios tipos:</p>
+<table class="tabla-datos">
+  <thead><tr><th>Herramienta</th><th>Para qué sirve</th></tr></thead>
+  <tbody>
+    <tr><td>Banco de imágenes</td><td>Descargar fotos (algunas gratis, otras de pago).</td></tr>
+    <tr><td>Banco de iconos</td><td>Iconos clasificados por temas y estilos.</td></tr>
+    <tr><td>Editor de paleta de colores</td><td>Elegir combinaciones de colores que peguen entre sí.</td></tr>
+    <tr><td>Repositorio de tipografías</td><td>Elegir tipos de letra.</td></tr>
+    <tr><td>Editor de imágenes</td><td>Recortar, girar o retocar fotos.</td></tr>
+    <tr><td>Maquetador visual / plantillas</td><td>Montar la web arrastrando bloques (Wix, Google Sites…).</td></tr>
+  </tbody>
+</table>
+
+<h2>Lenguajes para hacer páginas web</h2>
+<p>Los maquetadores por bloques son cómodos, pero hacen páginas parecidas entre sí. Para crear una web <strong>a medida</strong> se usan lenguajes de edición:</p>
+<ul>
+  <li><strong>HTML</strong> (HyperText Markup Language): el más sencillo y básico. Da el <strong>contenido</strong> y la estructura mediante etiquetas. Es el que aprenderás.</li>
+  <li><strong>HTML5</strong>: la versión actual de HTML, recomendada por ser más accesible.</li>
+  <li><strong>CSS</strong> (Cascading Style Sheets): define el <strong>estilo</strong> o aspecto (colores, tamaños, disposición). Lo verás a partir de la S5.</li>
+  <li><strong>XML / XHTML</strong>: otros lenguajes de marcas relacionados, más usados para intercambiar datos.</li>
+</ul>
+<div class="bloque bloque-formula">
+  <p class="bloque-titulo">La idea clave</p>
+  <p><strong>HTML pone el contenido y la estructura; CSS pone el estilo.</strong> Separar las dos cosas hace las páginas más fáciles de mantener.</p>
+</div>
+
+<div class="bloque bloque-actividad">
+  <p class="bloque-titulo">Tarea S2 · Analiza una web</p>
+  <p><strong>En esta sesión no creas ningún archivo.</strong> Responde en el documento de la tarea de Google Classroom:</p>
+  <ol>
+    <li>Elige una web que uses. Identifica su <strong>cabecera</strong>, su <strong>cuerpo</strong> y su <strong>pie</strong>, y di qué hay en cada uno (haz una captura y señálalos).</li>
+    <li>Rellena una tabla con <strong>una herramienta</strong> de cada tipo de la lista de arriba, con su enlace.</li>
+    <li>Explica con tus palabras la diferencia entre <strong>HTML</strong> y <strong>CSS</strong>.</li>
+  </ol>
+  <div class="bloque bloque-nota">
+    <p class="bloque-titulo">Ampliación (opcional)</p>
+    <p>Busca qué es un editor <strong>WYSIWYG</strong> y por qué en clase preferimos escribir el código nosotros en lugar de usar uno.</p>
+  </div>
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/s1-www-y-servidores.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/s3-primeros-pasos-en-html.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class=""> <p> <span class="license-label">Licencia: </span><span class="license">creative commons: attribution - share alike</span></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-web3-01">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S1 · WWW y servidores | Desarrollo web: HTML, CSS y animación</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260710093000WEB3SDA","packageTitle":"Desarrollo web: HTML, CSS y animación","language":"es"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-web3-01" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node no-ch">Desarrollo web · Inicio</a>
+</li>
+<li class="active"> <a href="../html/s1-www-y-servidores.html" class="active no-ch">S1 · WWW y servidores</a>
+</li>
+<li> <a href="../html/s2-estructura-y-herramientas.html" class="no-ch">S2 · Estructura y herramientas</a>
+</li>
+<li> <a href="../html/s3-primeros-pasos-en-html.html" class="no-ch">S3 · Primeros pasos en HTML</a>
+</li>
+<li> <a href="../html/s4-practicas-html-e-imagenes.html" class="no-ch">S4 · Prácticas HTML e imágenes</a>
+</li>
+<li> <a href="../html/s5-introduccion-a-css.html" class="no-ch">S5 · Introducción a CSS</a>
+</li>
+<li> <a href="../html/s6-selectores-y-estilos-css.html" class="no-ch">S6 · Selectores y estilos CSS</a>
+</li>
+<li> <a href="../html/s7-animacion-web.html" class="no-ch">S7 · Animación web</a>
+</li>
+<li> <a href="../html/s8-web-propia-final-y-entrega.html" class="no-ch">S8 · Web propia final y entrega</a>
+</li>
+<li> <a href="../html/chuleta-de-html-y-css.html" class="no-ch">Chuleta de HTML y CSS</a>
+</li>
+<li> <a href="../html/checklist-de-entrega.html" class="no-ch">Checklist de entrega</a>
+</li>
+</ul>
+</nav><main id="page-web3-01" class="page"> 
+<header class="main-header"> <p class="page-counter"> <span class="page-counter-label">Página </span><span class="page-counter-content"> <strong class="page-counter-current-page">2</strong><span class="page-counter-sep">/</span><strong class="page-counter-total">11</strong></span></p>
+
+<div class="package-header"><p class="package-title">Desarrollo web: HTML, CSS y animación</p></div>
+<div class="page-header"><h1 class="page-title">S1 · WWW y servidores</h1></div>
+</header><div id="page-content-page-web3-01" class="page-content">
+<article id="block-web3-01" class="box no-header">
+<header class="box-head no-icon">
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idev-web3-01" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idev-web3-01&quot;}">
+
+<div class="bloque bloque-teoria">
+  <p class="bloque-titulo">¿Qué pasa cuando escribes una dirección?</p>
+  <p>Cuando escribes una dirección como <code>www.wikipedia.org</code> y pulsas Intro, ocurre algo parecido a pedir un libro en una biblioteca enorme: tu ordenador <strong>pide</strong> la página y otro ordenador, muy lejos, se la <strong>envía</strong>. Todas esas páginas forman la <strong>World Wide Web (WWW)</strong>: la telaraña mundial de documentos enlazados entre sí a la que accedes con un navegador.</p>
+</div>
+
+<h2>Los dos protagonistas: navegador y servidor</h2>
+<figure>
+<svg viewBox="0 0 620 240" role="img" aria-label="El navegador pide la página al servidor y el servidor se la envía" xmlns="http://www.w3.org/2000/svg">
+  <title>Cómo viaja una página web</title>
+  <rect x="35" y="70" width="185" height="115" rx="10" fill="#eef4fb" stroke="#2f6fb0" stroke-width="2.5"/>
+  <rect x="35" y="70" width="185" height="26" rx="10" fill="#2f6fb0"/>
+  <circle cx="52" cy="83" r="4" fill="#fff"/><circle cx="66" cy="83" r="4" fill="#fff"/><circle cx="80" cy="83" r="4" fill="#fff"/>
+  <rect x="55" y="112" width="145" height="16" rx="8" fill="#fff" stroke="#9db8d6"/>
+  <rect x="55" y="140" width="110" height="9" rx="4" fill="#cfe0f2"/>
+  <rect x="55" y="156" width="130" height="9" rx="4" fill="#cfe0f2"/>
+  <text x="127" y="212" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#1b4d7e">Tu navegador</text>
+  <rect x="400" y="62" width="175" height="128" rx="10" fill="#f5f3fc" stroke="#453f93" stroke-width="2.5"/>
+  <rect x="418" y="80" width="139" height="24" rx="5" fill="#fff" stroke="#b7aee0"/>
+  <rect x="418" y="112" width="139" height="24" rx="5" fill="#fff" stroke="#b7aee0"/>
+  <rect x="418" y="144" width="139" height="24" rx="5" fill="#fff" stroke="#b7aee0"/>
+  <circle cx="432" cy="92" r="4" fill="#2a7d4f"/><circle cx="432" cy="124" r="4" fill="#2a7d4f"/><circle cx="432" cy="156" r="4" fill="#2a7d4f"/>
+  <text x="487" y="212" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#3a2f6b">Servidor web</text>
+  <line x1="228" y1="100" x2="388" y2="100" stroke="#2f6fb0" stroke-width="3"/>
+  <polygon points="388,100 375,93 375,107" fill="#2f6fb0"/>
+  <text x="308" y="90" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1b4d7e">1. Pido la página</text>
+  <line x1="388" y1="150" x2="228" y2="150" stroke="#e67e22" stroke-width="3"/>
+  <polygon points="228,150 241,143 241,157" fill="#e67e22"/>
+  <text x="308" y="170" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#8a4f12">2. Me envía la página</text>
+</svg>
+<figcaption>El navegador pide la página; el servidor se la envía. Esa conversación usa las reglas <strong>HTTP</strong>.</figcaption>
+</figure>
+<p>Para que veas una página web hacen falta dos ordenadores trabajando juntos:</p>
+<ul>
+  <li>El <strong>navegador</strong> (Firefox, Chrome…) es el programa de <em>tu</em> ordenador. Pide las páginas y las muestra en pantalla.</li>
+  <li>El <strong>servidor web</strong> es un ordenador especial que está encendido siempre y guarda las páginas. Cuando el navegador se las pide, se las manda.</li>
+</ul>
+<p>Esas reglas para pedir y enviar páginas se llaman <strong>HTTP</strong> (o <strong>HTTPS</strong>, la versión segura). Por eso las direcciones empiezan por <code>https://</code>.</p>
+<div class="bloque bloque-nota">
+  <p class="bloque-titulo">¿Por qué un servidor y no un ordenador cualquiera?</p>
+  <p>Porque a una página famosa la visitan miles de personas a la vez. Un servidor está preparado para estar encendido las 24 horas y atender muchísimas peticiones sin bloquearse. Las webs con mucho tráfico se copian en <strong>varios</strong> servidores que se reparten el trabajo.</p>
+</div>
+
+<h2>No solo hay servidores web</h2>
+<p>Un servidor es cualquier ordenador que ofrece un servicio a otros. Según lo que ofrezcan, hay varios tipos:</p>
+<table class="tabla-datos">
+  <thead><tr><th>Tipo de servidor</th><th>Para qué sirve</th></tr></thead>
+  <tbody>
+    <tr><td>Servidor <strong>web</strong></td><td>Guarda y envía páginas web.</td></tr>
+    <tr><td>Servidor de <strong>correo</strong></td><td>Gestiona el envío y la recepción de correos.</td></tr>
+    <tr><td>Servidor de <strong>archivos</strong></td><td>Almacena archivos para compartirlos.</td></tr>
+    <tr><td>Servidor de <strong>bases de datos</strong></td><td>Guarda datos organizados para las aplicaciones.</td></tr>
+  </tbody>
+</table>
+
+<h2>Las partes de una dirección (URL)</h2>
+<figure>
+<svg viewBox="0 0 640 170" role="img" aria-label="Partes de una URL: protocolo, dominio y ruta" xmlns="http://www.w3.org/2000/svg">
+  <title>Partes de una URL</title>
+  <rect x="40" y="28" width="120" height="46" rx="8" fill="#e9ecf5" stroke="#3b3a7a" stroke-width="2"/>
+  <rect x="160" y="28" width="245" height="46" fill="#dfe9f7" stroke="#2f6fb0" stroke-width="2"/>
+  <rect x="405" y="28" width="195" height="46" rx="8" fill="#faeede" stroke="#e67e22" stroke-width="2"/>
+  <text x="100" y="57" text-anchor="middle" font-family="monospace" font-size="16" fill="#24262e">https://</text>
+  <text x="282" y="57" text-anchor="middle" font-family="monospace" font-size="16" fill="#24262e">es.wikipedia.org</text>
+  <text x="502" y="57" text-anchor="middle" font-family="monospace" font-size="16" fill="#24262e">/wiki/Internet</text>
+  <line x1="100" y1="80" x2="100" y2="104" stroke="#3b3a7a" stroke-width="2"/>
+  <line x1="282" y1="80" x2="282" y2="104" stroke="#2f6fb0" stroke-width="2"/>
+  <line x1="502" y1="80" x2="502" y2="104" stroke="#e67e22" stroke-width="2"/>
+  <text x="100" y="124" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#3b3a7a">protocolo</text>
+  <text x="282" y="124" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#1b4d7e">dominio</text>
+  <text x="502" y="124" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#8a4f12">ruta</text>
+  <text x="100" y="144" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5f6b">las reglas</text>
+  <text x="282" y="144" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5f6b">el sitio</text>
+  <text x="502" y="144" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5a5f6b">la página concreta</text>
+</svg>
+<figcaption>Cada dirección tiene tres partes: <strong>protocolo</strong>, <strong>dominio</strong> y <strong>ruta</strong>.</figcaption>
+</figure>
+
+<h2>Mira una página por dentro</h2>
+<p>Todas las páginas están escritas con un lenguaje llamado <strong>HTML</strong> (lo aprenderás a partir de la próxima sesión). Puedes verlo tú mismo:</p>
+<div class="bloque bloque-resuelto">
+  <p class="bloque-titulo">Inspeccionar una página real</p>
+  <ol>
+    <li>Abre en el navegador una página que te guste (por ejemplo, la Wikipedia).</li>
+    <li>Haz <strong>clic derecho</strong> sobre cualquier parte de la página.</li>
+    <li>Elige <strong>«Inspeccionar»</strong> (o pulsa la tecla <strong>F12</strong>).</li>
+    <li>Se abrirá un panel con el <strong>código HTML</strong> de la página. Pasa el ratón por encima de las líneas y verás cómo se iluminan las partes de la página.</li>
+  </ol>
+</div>
+
+<div class="bloque bloque-actividad">
+  <p class="bloque-titulo">Tarea S1 · Cómo funciona la web</p>
+  <p><strong>En esta sesión no creas ningún archivo.</strong> Responde en el documento que encontrarás dentro de la tarea de Google Classroom:</p>
+  <ol>
+    <li>¿Qué es una página web y qué es la <strong>WWW</strong>?</li>
+    <li>¿Qué diferencia hay entre un <strong>navegador</strong> y un <strong>servidor</strong> web? ¿Por qué las páginas se guardan en servidores?</li>
+    <li>Copia la URL de una página que uses mucho e identifica sus partes: <em>protocolo</em>, <em>dominio</em> y <em>ruta</em>.</li>
+    <li><strong>Inspecciona</strong> una página real (clic derecho → Inspeccionar). Haz una captura del panel de código y pégala en el documento con una frase de lo que te haya llamado la atención.</li>
+  </ol>
+  <div class="bloque bloque-nota">
+    <p class="bloque-titulo">Ampliación (opcional)</p>
+    <p>Busca qué significan las siglas <strong>HTTP</strong> y <strong>URL</strong>, y averigua otro protocolo distinto de <code>http</code> (pista: el que sirve para enviar archivos empieza por «F»).</p>
+  </div>
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../index.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/s2-estructura-y-herramientas.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class=""> <p> <span class="license-label">Licencia: </span><span class="license">creative commons: attribution - share alike</span></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-web3-03">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S3 · Primeros pasos en HTML | Desarrollo web: HTML, CSS y animación</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260710093000WEB3SDA","packageTitle":"Desarrollo web: HTML, CSS y animación","language":"es"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-web3-03" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node no-ch">Desarrollo web · Inicio</a>
+</li>
+<li> <a href="../html/s1-www-y-servidores.html" class="no-ch">S1 · WWW y servidores</a>
+</li>
+<li> <a href="../html/s2-estructura-y-herramientas.html" class="no-ch">S2 · Estructura y herramientas</a>
+</li>
+<li class="active"> <a href="../html/s3-primeros-pasos-en-html.html" class="active no-ch">S3 · Primeros pasos en HTML</a>
+</li>
+<li> <a href="../html/s4-practicas-html-e-imagenes.html" class="no-ch">S4 · Prácticas HTML e imágenes</a>
+</li>
+<li> <a href="../html/s5-introduccion-a-css.html" class="no-ch">S5 · Introducción a CSS</a>
+</li>
+<li> <a href="../html/s6-selectores-y-estilos-css.html" class="no-ch">S6 · Selectores y estilos CSS</a>
+</li>
+<li> <a href="../html/s7-animacion-web.html" class="no-ch">S7 · Animación web</a>
+</li>
+<li> <a href="../html/s8-web-propia-final-y-entrega.html" class="no-ch">S8 · Web propia final y entrega</a>
+</li>
+<li> <a href="../html/chuleta-de-html-y-css.html" class="no-ch">Chuleta de HTML y CSS</a>
+</li>
+<li> <a href="../html/checklist-de-entrega.html" class="no-ch">Checklist de entrega</a>
+</li>
+</ul>
+</nav><main id="page-web3-03" class="page"> 
+<header class="main-header"> <p class="page-counter"> <span class="page-counter-label">Página </span><span class="page-counter-content"> <strong class="page-counter-current-page">4</strong><span class="page-counter-sep">/</span><strong class="page-counter-total">11</strong></span></p>
+
+<div class="package-header"><p class="package-title">Desarrollo web: HTML, CSS y animación</p></div>
+<div class="page-header"><h1 class="page-title">S3 · Primeros pasos en HTML</h1></div>
+</header><div id="page-content-page-web3-03" class="page-content">
+<article id="block-web3-03" class="box no-header">
+<header class="box-head no-icon">
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idev-web3-03" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idev-web3-03&quot;}">
+
+<div class="bloque bloque-teoria">
+  <p class="bloque-titulo">Tu primera página HTML</p>
+  <p>HTML está formado por <strong>etiquetas</strong> que el navegador interpreta. Una etiqueta se escribe entre <code>&lt;</code> y <code>&gt;</code>. La mayoría van por pares: una de <strong>apertura</strong> y otra de <strong>cierre</strong> (con una barra <code>/</code>), y entre las dos va el contenido.</p>
+</div>
+
+<h2>La anatomía de un elemento</h2>
+<div class="bloque bloque-resuelto">
+<pre><code>&lt;p&gt;Esto es un párrafo.&lt;/p&gt;</code></pre>
+<ul>
+  <li><code>&lt;p&gt;</code> → etiqueta de <strong>apertura</strong> (empieza el párrafo).</li>
+  <li><code>Esto es un párrafo.</code> → el <strong>contenido</strong>.</li>
+  <li><code>&lt;/p&gt;</code> → etiqueta de <strong>cierre</strong> (termina el párrafo).</li>
+</ul>
+<p>Algunas etiquetas están <strong>vacías</strong> y no se cierran, como <code>&lt;br&gt;</code> (salto de línea) o <code>&lt;img&gt;</code> (imagen).</p>
+</div>
+
+<h2>La estructura mínima de una página</h2>
+<p>Toda página HTML tiene siempre el mismo esqueleto. Cópialo: es tu punto de partida.</p>
+<div class="bloque bloque-resuelto">
+  <p class="bloque-titulo">Esqueleto básico (cópialo y pruébalo)</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;¡Hola, mundo!&lt;/h1&gt;
+    &lt;p&gt;Esta es mi primera página web.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+<table class="tabla-datos">
+  <thead><tr><th>Elemento</th><th>Para qué sirve</th></tr></thead>
+  <tbody>
+    <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Avisa de que es una página HTML moderna. Va siempre la primera.</td></tr>
+    <tr><td><code>&lt;html&gt;</code></td><td>Envuelve toda la página.</td></tr>
+    <tr><td><code>&lt;head&gt;</code></td><td>Información que <em>no</em> se ve: título de la pestaña, juego de caracteres…</td></tr>
+    <tr><td><code>&lt;meta charset="utf-8"&gt;</code></td><td>Permite mostrar tildes y ñ correctamente.</td></tr>
+    <tr><td><code>&lt;title&gt;</code></td><td>El texto que aparece en la pestaña del navegador.</td></tr>
+    <tr><td><code>&lt;body&gt;</code></td><td>Todo lo que <strong>sí</strong> se ve en la página.</td></tr>
+  </tbody>
+</table>
+
+<h2>Encabezados y párrafos</h2>
+<p>Dentro del <code>&lt;body&gt;</code> organizas el texto con <strong>encabezados</strong> (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>, del más importante al menos) y <strong>párrafos</strong> (<code>&lt;p&gt;</code>).</p>
+<div class="bloque bloque-resuelto">
+<pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Un apartado&lt;/h2&gt;
+&lt;p&gt;Un párrafo con la explicación del apartado.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Otro párrafo después de una línea de separación.&lt;/p&gt;</code></pre>
+<p><code>&lt;hr&gt;</code> dibuja una línea horizontal de separación y <code>&lt;br&gt;</code> hace un salto de línea. Ninguno se cierra.</p>
+</div>
+
+<div class="bloque bloque-actividad">
+  <p class="bloque-titulo">Tarea S3 · Mi primera página</p>
+  <p>Crea una página HTML sobre <strong>tu tema</strong> partiendo del esqueleto básico. Debe tener:</p>
+  <ol>
+    <li>Un <code>&lt;title&gt;</code> con sentido (aparecerá en la pestaña).</li>
+    <li>Un <code>&lt;h1&gt;</code> con el título de tu página y algún <code>&lt;h2&gt;</code>.</li>
+    <li>Al menos <strong>dos párrafos</strong> que presenten tu tema.</li>
+    <li>Una línea de separación <code>&lt;hr&gt;</code>.</li>
+  </ol>
+  <p>Esta página es la <strong>base</strong> de tu web final: la irás ampliando en las próximas sesiones. Guárdala con el nombre <code>s3.html</code> y súbela a Google Classroom.</p>
+  <p><strong>Nombre del archivo:</strong> <code>s3.html</code></p>
+  <div class="bloque bloque-nota">
+    <p class="bloque-titulo">Ampliación (opcional)</p>
+    <p>Añade dentro del texto una palabra en <strong>negrita</strong> con <code>&lt;strong&gt;</code> y otra en <em>cursiva</em> con <code>&lt;em&gt;</code>.</p>
+  </div>
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/s2-estructura-y-herramientas.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/s4-practicas-html-e-imagenes.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class=""> <p> <span class="license-label">Licencia: </span><span class="license">creative commons: attribution - share alike</span></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

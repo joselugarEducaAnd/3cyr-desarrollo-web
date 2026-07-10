@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-web3-09">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chuleta de HTML y CSS | Desarrollo web: HTML, CSS y animación</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260710093000WEB3SDA","packageTitle":"Desarrollo web: HTML, CSS y animación","language":"es"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-web3-09" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node no-ch">Desarrollo web · Inicio</a>
+</li>
+<li> <a href="../html/s1-www-y-servidores.html" class="no-ch">S1 · WWW y servidores</a>
+</li>
+<li> <a href="../html/s2-estructura-y-herramientas.html" class="no-ch">S2 · Estructura y herramientas</a>
+</li>
+<li> <a href="../html/s3-primeros-pasos-en-html.html" class="no-ch">S3 · Primeros pasos en HTML</a>
+</li>
+<li> <a href="../html/s4-practicas-html-e-imagenes.html" class="no-ch">S4 · Prácticas HTML e imágenes</a>
+</li>
+<li> <a href="../html/s5-introduccion-a-css.html" class="no-ch">S5 · Introducción a CSS</a>
+</li>
+<li> <a href="../html/s6-selectores-y-estilos-css.html" class="no-ch">S6 · Selectores y estilos CSS</a>
+</li>
+<li> <a href="../html/s7-animacion-web.html" class="no-ch">S7 · Animación web</a>
+</li>
+<li> <a href="../html/s8-web-propia-final-y-entrega.html" class="no-ch">S8 · Web propia final y entrega</a>
+</li>
+<li class="active"> <a href="../html/chuleta-de-html-y-css.html" class="active no-ch">Chuleta de HTML y CSS</a>
+</li>
+<li> <a href="../html/checklist-de-entrega.html" class="no-ch">Checklist de entrega</a>
+</li>
+</ul>
+</nav><main id="page-web3-09" class="page"> 
+<header class="main-header"> <p class="page-counter"> <span class="page-counter-label">Página </span><span class="page-counter-content"> <strong class="page-counter-current-page">10</strong><span class="page-counter-sep">/</span><strong class="page-counter-total">11</strong></span></p>
+
+<div class="package-header"><p class="package-title">Desarrollo web: HTML, CSS y animación</p></div>
+<div class="page-header"><h1 class="page-title">Chuleta de HTML y CSS</h1></div>
+</header><div id="page-content-page-web3-09" class="page-content">
+<article id="block-web3-09" class="box no-header">
+<header class="box-head no-icon">
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idev-web3-09" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idev-web3-09&quot;}">
+
+<div class="bloque bloque-teoria">
+  <p class="bloque-titulo">Todo a mano</p>
+  <p>Esta página es tu <strong>chuleta</strong>: las etiquetas y propiedades que más vas a usar, juntas. Vuelve aquí siempre que se te olvide algo.</p>
+</div>
+
+<h2>Etiquetas HTML esenciales</h2>
+<table class="tabla-datos">
+  <thead><tr><th>Etiqueta</th><th>Para qué</th></tr></thead>
+  <tbody>
+    <tr><td><code>&lt;h1&gt;…&lt;h6&gt;</code></td><td>Encabezados (del más al menos importante).</td></tr>
+    <tr><td><code>&lt;p&gt;</code></td><td>Párrafo.</td></tr>
+    <tr><td><code>&lt;br&gt;</code> · <code>&lt;hr&gt;</code></td><td>Salto de línea · línea de separación.</td></tr>
+    <tr><td><code>&lt;strong&gt;</code> · <code>&lt;em&gt;</code></td><td>Negrita · cursiva.</td></tr>
+    <tr><td><code>&lt;ul&gt; &lt;ol&gt; &lt;li&gt;</code></td><td>Listas (con viñetas / numeradas) y sus elementos.</td></tr>
+    <tr><td><code>&lt;a href="..."&gt;</code></td><td>Enlace (añade <code>target="_blank" rel="noopener"</code>).</td></tr>
+    <tr><td><code>&lt;img src="..." alt="..."&gt;</code></td><td>Imagen (no se cierra).</td></tr>
+    <tr><td><code>&lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt;</code></td><td>Tabla, fila, celda de cabecera, celda.</td></tr>
+    <tr><td><code>&lt;!-- ... --&gt;</code></td><td>Comentario (no se ve).</td></tr>
+  </tbody>
+</table>
+
+<h2>Propiedades CSS esenciales</h2>
+<table class="tabla-datos">
+  <thead><tr><th>Propiedad</th><th>Qué cambia</th></tr></thead>
+  <tbody>
+    <tr><td><code>color</code></td><td>Color del texto.</td></tr>
+    <tr><td><code>background-color</code></td><td>Color de fondo.</td></tr>
+    <tr><td><code>font-family</code> · <code>font-size</code></td><td>Tipo y tamaño de letra.</td></tr>
+    <tr><td><code>text-align</code></td><td>Alineación (<code>left</code>, <code>center</code>…).</td></tr>
+    <tr><td><code>margin</code> · <code>padding</code> · <code>border</code></td><td>Espacio exterior · interior · borde.</td></tr>
+    <tr><td><code>transition</code></td><td>Cambio suave (con <code>:hover</code>).</td></tr>
+    <tr><td><code>@keyframes</code> · <code>animation</code></td><td>Animación que se repite sola.</td></tr>
+  </tbody>
+</table>
+
+<h2>Selectores CSS</h2>
+<table class="tabla-datos">
+  <thead><tr><th>Selector</th><th>Aplica a…</th></tr></thead>
+  <tbody>
+    <tr><td><code>p { }</code></td><td>Todas las etiquetas de ese tipo.</td></tr>
+    <tr><td><code>.clase { }</code></td><td>Las etiquetas con ese <code>class</code>.</td></tr>
+    <tr><td><code>#id { }</code></td><td>El único elemento con ese <code>id</code>.</td></tr>
+    <tr><td><code>h1, h2 { }</code></td><td>Varios a la vez (separados por comas).</td></tr>
+  </tbody>
+</table>
+<div class="bloque bloque-nota">
+  <p class="bloque-titulo">Regla de oro</p>
+  <p>El navegador <strong>ignora</strong> lo que no entiende y sigue. Si algo no se ve como quieres, revisa que las etiquetas estén bien cerradas y los <code>;</code> del CSS en su sitio.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/s8-web-propia-final-y-entrega.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/checklist-de-entrega.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class=""> <p> <span class="license-label">Licencia: </span><span class="license">creative commons: attribution - share alike</span></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>
