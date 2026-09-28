@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratorio de animación CSS</title>
+<style>
+/* ===========================================================
+   Widget manipulable · SdA 02 de 3.º CYR · S7 (animación web)
+   Autocontenido: sin CDN, sin dependencias, sin almacenamiento.
+   Estilo Majuelo · chrome de la unidad (azul).
+   =========================================================== */
+:root{
+  --chrome:#3d6694; --chrome-osc:#294d75; --chrome-tinte:#eff3f8; --chrome-linea:#c8d6e4;
+  --gris:#6b6f7a; --txt:#222;
+  --fuente:Verdana,'DejaVu Sans',Arial,sans-serif;
+  --mono:'DejaVu Sans Mono','Liberation Mono',Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--fuente);color:var(--txt);background:#fff;font-size:13px;line-height:1.45;padding:10px 12px 12px;overflow-x:hidden}
+.pestanas{display:flex;gap:6px;margin:0 0 8px;flex-wrap:wrap}
+.pestanas button{font-family:var(--fuente);font-size:12px;cursor:pointer;border:1px solid var(--chrome);background:#fff;color:var(--chrome);border-radius:5px;padding:4px 10px}
+.pestanas button[aria-pressed="true"]{background:var(--chrome);color:#fff}
+.rejilla{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:14px;align-items:start}
+.escena{border:1px dashed #b9bcc6;border-radius:6px;background:#fafafa;height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.escena .pista{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:10.5px;color:var(--gris)}
+#obj{font-family:Arial,sans-serif;font-weight:700;font-size:32px;color:#453f93;margin:0;cursor:default;user-select:none;display:inline-block}
+.ctrl{border:1px solid var(--chrome-linea);border-radius:6px;background:var(--chrome-tinte);padding:8px 10px}
+.fila{margin:0 0 8px}
+.fila:last-child{margin-bottom:0}
+.fila>label,.fila>.t{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--chrome-osc)}
+.fila>label span{font-family:var(--mono);font-weight:400}
+.fila input[type=range]{width:100%;margin:2px 0 0;accent-color:var(--chrome)}
+.fila select{width:100%;font-family:var(--fuente);font-size:12px;margin-top:2px;padding:2px}
+.chk{font-size:12px;font-weight:400 !important;color:var(--txt) !important;justify-content:flex-start !important;gap:6px}
+pre{margin:8px 0 0;background:#f6f7fa;border:1px solid #dcdfe6;border-radius:6px;padding:7px 10px;font-family:var(--mono);font-size:11.5px;line-height:1.5;white-space:pre;overflow-x:auto}
+.lectura{margin:8px 0 0;padding:6px 10px;border-radius:6px;font-size:12px;border:1px solid #2a7d4f;background:#eef8f1;color:#1d5636;min-height:40px}
+.btn{font-family:var(--fuente);font-size:12px;cursor:pointer;border:1px solid var(--chrome);background:var(--chrome);color:#fff;border-radius:5px;padding:4px 10px;margin-top:8px}
+.btn:hover{background:var(--chrome-osc)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--chrome-osc);outline-offset:2px}
+[hidden]{display:none !important}
+@media (max-width:620px){.rejilla{grid-template-columns:1fr}.escena{height:160px}}
+</style>
+<style id="dyn"></style>
+</head>
+<body>
+<main class="wg">
+<div class="pestanas" role="group" aria-label="Tipo de movimiento">
+  <button type="button" id="tT" aria-pressed="true">Transición (:hover)</button>
+  <button type="button" id="tA" aria-pressed="false">Animación (@keyframes)</button>
+</div>
+<div class="rejilla">
+  <div>
+    <div class="escena"><p id="obj">¡Hola!</p><span class="pista" id="pista"></span></div>
+    <div class="lectura" id="lectura"></div>
+  </div>
+  <div>
+    <div class="ctrl" id="cT">
+      <div class="fila"><label for="dT">duración <span id="vdT"></span></label><input id="dT" type="range" min="0" max="2" step="0.1" value="0.4"></div>
+      <div class="fila"><span class="t">al pasar el ratón cambia…</span>
+        <label class="chk"><input type="checkbox" id="kC" checked> el color</label>
+        <label class="chk"><input type="checkbox" id="kT" checked> el tamaño</label>
+      </div>
+    </div>
+    <div class="ctrl" id="cA" hidden>
+      <div class="fila"><label for="ef">efecto</label>
+        <select id="ef"><option value="latido">latido (crece y encoge)</option><option value="entra">entra deslizándose</option><option value="gira">gira</option></select></div>
+      <div class="fila"><label for="dA">duración <span id="vdA"></span></label><input id="dA" type="range" min="0.3" max="4" step="0.1" value="1.5"></div>
+      <div class="fila"><label class="chk"><input type="checkbox" id="inf" checked> repetir sin parar (<code>infinite</code>)</label></div>
+      <button type="button" class="btn" id="play">▶ Reproducir</button>
+    </div>
+    <pre id="css"></pre>
+  </div>
+</div>
+</main>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var modo='T', obj=$('obj'), dyn=$('dyn');
+  var FX={
+    latido:'  0%   { transform: scale(1);   }\n  50%  { transform: scale(1.2); }\n  100% { transform: scale(1);   }',
+    entra:'  from { transform: translateX(-100px); opacity: 0; }\n  to   { transform: translateX(0);      opacity: 1; }',
+    gira:'  from { transform: rotate(0deg);   }\n  to   { transform: rotate(360deg); }'
+  };
+  function num(v){return (+v).toString().replace('.',',');}
+  function pinta(){
+    var code, css, lect;
+    if(modo==='T'){
+      var d=+$('dT').value, c=$('kC').checked, t=$('kT').checked;
+      $('vdT').textContent=d+'s';
+      var hov=[]; if(c) hov.push('  color: orange;'); if(t) hov.push('  font-size: 45px;');
+      code='h1 {\n  color: #453f93;\n  transition: all '+d+'s;\n}\nh1:hover {\n'+(hov.join('\n')||'  /* no cambia nada */')+'\n}';
+      css='#obj{transition:all '+d+'s}#obj:hover,#obj.on{'+(c?'color:orange;':'')+(t?'font-size:45px;':'')+'}';
+      $('pista').textContent='Pasa el ratón por encima (en el móvil, tócalo)';
+      if(!c&&!t) lect='Si en <code>:hover</code> no cambias ninguna propiedad, no hay nada que animar.';
+      else if(d===0) lect='Con <code>transition</code> a 0 segundos el cambio es <strong>brusco</strong>: salta de golpe. Es lo que pasa si te olvidas de escribir <code>transition</code>.';
+      else if(d<=0.6) lect='Entre 0,2 y 0,6 segundos el cambio se nota suave y rápido: es el rango que suele quedar bien.';
+      else lect='Con '+num(d)+' s el cambio va <strong>lento</strong>. Sirve para llamar la atención, pero si es un botón puede parecer que la página no responde.';
+    }else{
+      var e=$('ef').value, d2=+$('dA').value, inf=$('inf').checked;
+      $('vdA').textContent=d2+'s';
+      code='@keyframes '+e+' {\n'+FX[e]+'\n}\nh1 {\n  animation: '+e+' '+d2+'s'+(inf?' infinite':'')+';\n}';
+      css='@keyframes '+e+'{'+FX[e].replace(/\n/g,'')+'}#obj.go{animation:'+e+' '+d2+'s'+(inf?' infinite':'')+'}';
+      $('pista').textContent=inf?'Se repite sola, sin tocar nada':'Se reproduce una vez al cargar: pulsa «Reproducir» para verla otra vez';
+      lect = inf ? 'Con <code>infinite</code> no para nunca. Úsalo en <strong>un</strong> elemento: si hay varios moviéndose a la vez, la página marea.'
+                 : 'Sin <code>infinite</code> la animación se ejecuta <strong>una sola vez</strong>, al cargar la página. Es lo típico para que algo «entre» en escena.';
+      if(e==='entra'&&inf) lect='«Entrar» una y otra vez no tiene mucho sentido: este efecto se usa casi siempre <strong>sin</strong> <code>infinite</code>.';
+    }
+    $('css').textContent=code; dyn.textContent=css; $('lectura').innerHTML=lect;
+  }
+  function reproduce(){obj.classList.remove('go');void obj.offsetWidth;obj.classList.add('go');}
+  function cambia(m){
+    modo=m; $('tT').setAttribute('aria-pressed',m==='T'); $('tA').setAttribute('aria-pressed',m==='A');
+    $('cT').hidden=(m!=='T'); $('cA').hidden=(m!=='A'); obj.classList.remove('on','go');
+    pinta(); if(m==='A') reproduce();
+  }
+  $('tT').onclick=function(){cambia('T')}; $('tA').onclick=function(){cambia('A')};
+  ['dT','kC','kT'].forEach(function(i){$(i).addEventListener('input',pinta)});
+  ['ef','dA','inf'].forEach(function(i){$(i).addEventListener('input',function(){pinta();reproduce();})});
+  $('play').onclick=reproduce;
+  obj.addEventListener('click',function(){if(modo==='T')obj.classList.toggle('on')});
+  pinta();
+})();
+</script>
+</body>
+</html>

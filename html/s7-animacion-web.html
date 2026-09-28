@@ -128,6 +128,15 @@
 &lt;/style&gt;</code></pre>
 </div>
 
+<div class="bloque bloque-actividad">
+  <p class="bloque-titulo">Pruébalo tú: laboratorio de animación</p>
+  <p>Cambia la duración y el efecto, y mira cómo cambia el código. Cuando te guste el resultado, puedes copiarlo a tu página.</p>
+<style>.cyr02-anim{width:100%;max-width:100%;border:1px solid #c8d6e4;border-radius:6px;height:640px;display:block}</style>
+<script>(function(){function ajusta(){var fs=document.querySelectorAll("iframe.cyr02-anim");for(var i=0;i<fs.length;i++){var f=fs[i];if(!f.getBoundingClientRect().width)continue;try{var d=f.contentDocument,a=d&&d.querySelector(".wg");if(!a)continue;var h=Math.ceil(a.getBoundingClientRect().height+24);if(h>200&&Math.abs(h-f.clientHeight)>4)f.style.height=h+"px";}catch(e){}}}document.addEventListener("click",function(){setTimeout(ajusta,120);setTimeout(ajusta,600);},true);window.addEventListener("load",function(){ajusta();setTimeout(ajusta,400);});window.addEventListener("resize",function(){setTimeout(ajusta,150);});setInterval(ajusta,1000);})();</script>
+<iframe class="cyr02-anim" src="../content/resources/widgets/widget_laboratorio_animacion.html" title="Pruébalo tú: laboratorio de animación" width="100%" loading="lazy"></iframe>
+  <p>Prueba a poner la transición a 0 segundos: así se ve una página a la que le falta <code>transition</code>.</p>
+</div>
+
 <div class="bloque bloque-formula">
   <p class="bloque-titulo">Consejo de buen gusto</p>
   <p>Una animación llama la atención… si no hay veinte a la vez. Con <strong>una o dos</strong> bien elegidas tu página gana mucho; si son demasiadas, marea.</p>

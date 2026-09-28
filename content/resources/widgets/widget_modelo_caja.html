@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El modelo de caja, en directo</title>
+<style>
+/* ===========================================================
+   Widget manipulable · SdA 02 de 3.º CYR · S6 (modelo de caja)
+   Autocontenido: sin CDN, sin dependencias, sin almacenamiento.
+   Estilo Majuelo · chrome de la unidad (azul).
+   =========================================================== */
+:root{
+  --chrome:#3d6694; --chrome-osc:#294d75; --chrome-tinte:#eff3f8; --chrome-linea:#c8d6e4;
+  --m:#faeede; --m-l:#e67e22; --m-t:#8a4f12;
+  --b:#453f93; --b-t:#3a2f6b;
+  --p:#eef4fb; --p-l:#2f6fb0; --p-t:#1b4d7e;
+  --c:#eaf5ee; --c-l:#2a7d4f; --c-t:#1c5c39;
+  --gris:#6b6f7a; --txt:#222;
+  --fuente:Verdana,'DejaVu Sans',Arial,sans-serif;
+  --mono:'DejaVu Sans Mono','Liberation Mono',Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--fuente);color:var(--txt);background:#fff;font-size:13px;line-height:1.45;padding:10px 12px 12px;overflow-x:hidden}
+.rejilla{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:14px;align-items:start}
+.ctrl{border:1px solid var(--chrome-linea);border-radius:6px;background:var(--chrome-tinte);padding:8px 10px}
+.fila{margin:0 0 8px}
+.fila:last-child{margin-bottom:0}
+.fila label{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
+.fila label span{font-family:var(--mono);font-weight:400}
+.fila input{width:100%;margin:2px 0 0;accent-color:var(--chrome)}
+.fila.m label{color:var(--m-t)} .fila.b label{color:var(--b-t)} .fila.p label{color:var(--p-t)}
+/* ---------- escenario ---------- */
+.escena{border:1px dashed #b9bcc6;border-radius:6px;background:#fafafa;padding:0;min-height:230px;display:flex;align-items:safe center;justify-content:safe center;overflow:auto;position:relative}
+.escena .pagina{position:absolute;top:4px;left:8px;font-size:10px;color:var(--gris)}
+.zona-m{display:flow-root;background:repeating-linear-gradient(45deg,var(--m) 0 7px,#fdf6ee 7px 14px);outline:1.5px dashed var(--m-l);position:relative}
+.tarjeta{border-style:solid;border-color:var(--b);background:var(--p);position:relative}
+.contenido{display:block;width:150px;background:var(--c);outline:1.5px solid var(--c-l);color:var(--c-t);font-size:12px;padding:6px 8px;text-align:center}
+.etq{position:absolute;font-size:10px;font-weight:700;white-space:nowrap;pointer-events:none}
+.etq.m{color:var(--m-t);top:1px;left:4px}
+.etq.p{color:var(--p-t);top:1px;left:3px}
+/* ---------- lectura ---------- */
+.medidas{margin:8px 0 0;font-size:12px;border:1px solid var(--chrome-linea);border-radius:6px;padding:6px 10px}
+.medidas b{color:var(--chrome-osc)}
+.suma{font-family:var(--mono);font-size:11.5px;margin-top:2px}
+.suma .m{color:var(--m-t)} .suma .b{color:var(--b-t)} .suma .p{color:var(--p-t)} .suma .c{color:var(--c-t)}
+pre{margin:8px 0 0;background:#f6f7fa;border:1px solid #dcdfe6;border-radius:6px;padding:7px 10px;font-family:var(--mono);font-size:12px;line-height:1.5;white-space:pre;overflow-x:auto}
+.retos{margin:8px 0 0;font-size:12px}
+.reto{display:flex;gap:6px;align-items:baseline;margin:2px 0}
+.reto i{font-style:normal;display:inline-block;width:18px;text-align:center;font-weight:700;color:#b9bcc6}
+.reto.ok i{color:#2a7d4f}
+.reto.ok{color:#1d5636}
+button{font-family:var(--fuente);font-size:12px;cursor:pointer;border:1px solid var(--chrome);background:#fff;color:var(--chrome);border-radius:5px;padding:3px 10px;margin-top:8px}
+button:hover{background:var(--chrome);color:#fff}
+button:focus-visible,input:focus-visible{outline:3px solid var(--chrome-osc);outline-offset:2px}
+@media (max-width:620px){
+  .rejilla{grid-template-columns:1fr}
+  .escena{min-height:210px}
+}
+</style>
+</head>
+<body>
+<main class="wg">
+<div class="rejilla">
+  <div>
+    <div class="escena" aria-live="polite">
+      <span class="pagina">página</span>
+      <div class="zona-m" id="zm"><span class="etq m">margin</span>
+        <div class="tarjeta" id="tj"><span class="etq p" id="ep">padding</span>
+          <span class="contenido">contenido<br>(150 px de ancho)</span>
+        </div>
+      </div>
+    </div>
+    <div class="medidas">
+      <div>Ancho que ocupa la caja en la página: <b id="total">—</b></div>
+      <div class="suma" id="suma"></div>
+    </div>
+  </div>
+  <div>
+    <div class="ctrl">
+      <div class="fila m"><label for="m">margin <span id="vm"></span></label><input id="m" type="range" min="0" max="40" step="2" value="20"></div>
+      <div class="fila b"><label for="b">border <span id="vb"></span></label><input id="b" type="range" min="0" max="12" step="1" value="2"></div>
+      <div class="fila p"><label for="p">padding <span id="vp"></span></label><input id="p" type="range" min="0" max="40" step="2" value="12"></div>
+    </div>
+    <pre id="css"></pre>
+    <div class="retos">
+      <div class="reto" id="r1"><i>○</i><span>Quita el espacio de <strong>fuera</strong> sin tocar el de dentro.</span></div>
+      <div class="reto" id="r2"><i>○</i><span>Haz que la caja ocupe <strong>exactamente 250 px</strong> de ancho.</span></div>
+      <div class="reto" id="r3"><i>○</i><span>Borde grueso (8 px o más) y el texto <strong>pegado</strong> al borde.</span></div>
+    </div>
+    <button type="button" id="rst">Volver al ejemplo</button>
+  </div>
+</div>
+</main>
+<script>
+(function(){
+  var C=150, $=function(i){return document.getElementById(i)};
+  var m=$('m'), b=$('b'), p=$('p');
+  function pinta(){
+    var M=+m.value, B=+b.value, P=+p.value;
+    $('vm').textContent=M+'px'; $('vb').textContent=B+'px'; $('vp').textContent=P+'px';
+    $('zm').style.padding='0';
+    var tj=$('tj');
+    tj.style.margin=M+'px'; tj.style.borderWidth=B+'px'; tj.style.padding=P+'px';
+    $('ep').style.display = P>=12 ? '' : 'none';
+    document.querySelector('.etq.m').style.display = M>=12 ? '' : 'none';
+    var caja=C+2*P+2*B, tot=caja+2*M;
+    $('total').textContent=caja+' px (y '+tot+' px contando el margin)';
+    $('suma').innerHTML='<span class="c">'+C+'</span> + 2·<span class="p">'+P+'</span> + 2·<span class="b">'+B+'</span> = '+caja+' px';
+    $('css').textContent='.tarjeta {\n  border: '+B+'px solid #453f93;\n  padding: '+P+'px;  /* dentro */\n  margin: '+M+'px;   /* fuera */\n}';
+    marca('r1', M===0 && P>0);
+    marca('r2', caja===250);
+    marca('r3', B>=8 && P===0);
+  }
+  function marca(id,ok){var r=$(id);r.classList.toggle('ok',ok);r.querySelector('i').textContent=ok?'✔':'○';}
+  [m,b,p].forEach(function(x){x.addEventListener('input',pinta)});
+  $('rst').addEventListener('click',function(){m.value=20;b.value=2;p.value=12;pinta();});
+  pinta();
+})();
+</script>
+</body>
+</html>
