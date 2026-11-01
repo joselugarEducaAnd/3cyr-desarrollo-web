@@ -58,6 +58,22 @@
   <p>Esta página es tu <strong>chuleta</strong>: las etiquetas y propiedades que más vas a usar, juntas. Vuelve aquí siempre que se te olvide algo.</p>
 </div>
 
+<h2>Esqueleto de toda página</h2>
+<div class="bloque bloque-resuelto">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Mi página&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 class=&quot;efecto&quot;&gt;Lo que se ve va aquí&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>La línea <code>&lt;link&gt;</code> enlaza tu hoja <code>estilos.css</code>; si tu CSS va dentro de la página, en su lugar va <code>&lt;style&gt; … &lt;/style&gt;</code>.</p>
+</div>
+
 <h2>Etiquetas HTML esenciales</h2>
 <table class="tabla-datos">
   <thead><tr><th>Etiqueta</th><th>Para qué</th></tr></thead>
@@ -70,7 +86,8 @@
     <tr><td><code>&lt;a href="..."&gt;</code></td><td>Enlace (añade <code>target="_blank" rel="noopener"</code>).</td></tr>
     <tr><td><code>&lt;img src="..." alt="..."&gt;</code></td><td>Imagen (no se cierra).</td></tr>
     <tr><td><code>&lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt;</code></td><td>Tabla, fila, celda de cabecera, celda.</td></tr>
-    <tr><td><code>&lt;!-- ... --&gt;</code></td><td>Comentario (no se ve).</td></tr>
+    <tr><td><code>&lt;p class="x"&gt;</code> · <code>&lt;h1 id="y"&gt;</code></td><td>Ponerle una clase o un id a un elemento.</td></tr>
+    <tr><td><code>&lt;!-- ... --&gt;</code></td><td>Comentario en HTML (no se ve). En CSS: <code>/* ... */</code>.</td></tr>
   </tbody>
 </table>
 
@@ -82,6 +99,7 @@
     <tr><td><code>background-color</code></td><td>Color de fondo.</td></tr>
     <tr><td><code>font-family</code> · <code>font-size</code></td><td>Tipo y tamaño de letra.</td></tr>
     <tr><td><code>text-align</code></td><td>Alineación (<code>left</code>, <code>center</code>…).</td></tr>
+    <tr><td><code>font-weight: bold</code> · <code>text-decoration: underline</code></td><td>Negrita · subrayado.</td></tr>
     <tr><td><code>margin</code> · <code>padding</code> · <code>border</code></td><td>Espacio exterior · interior · borde.</td></tr>
     <tr><td><code>transition</code></td><td>Cambio suave (con <code>:hover</code>).</td></tr>
     <tr><td><code>@keyframes</code> · <code>animation</code></td><td>Animación que se repite sola.</td></tr>
@@ -96,11 +114,12 @@
     <tr><td><code>.clase { }</code></td><td>Las etiquetas con ese <code>class</code>.</td></tr>
     <tr><td><code>#id { }</code></td><td>El único elemento con ese <code>id</code>.</td></tr>
     <tr><td><code>h1, h2 { }</code></td><td>Varios a la vez (separados por comas).</td></tr>
+    <tr><td><code>.efecto:hover { }</code></td><td>Cuando el ratón está encima.</td></tr>
   </tbody>
 </table>
 <div class="bloque bloque-nota">
   <p class="bloque-titulo">Regla de oro</p>
-  <p>El navegador <strong>ignora</strong> lo que no entiende y sigue. Si algo no se ve como quieres, revisa que las etiquetas estén bien cerradas y los <code>;</code> del CSS en su sitio.</p>
+  <p>El navegador <strong>ignora</strong> lo que no entiende y sigue. Si algo no se ve como quieres, revisa que las etiquetas estén bien cerradas y los <code>;</code> del CSS en su sitio. Y en <code>estilos.css</code> va <strong>solo CSS</strong>: nunca <code>&lt;style&gt;</code>.</p>
 </div>
 
 </div>

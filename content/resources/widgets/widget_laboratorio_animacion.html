@@ -90,7 +90,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
       var d=+$('dT').value, c=$('kC').checked, t=$('kT').checked;
       $('vdT').textContent=d+'s';
       var hov=[]; if(c) hov.push('  color: orange;'); if(t) hov.push('  font-size: 45px;');
-      code='h1 {\n  color: #453f93;\n  transition: all '+d+'s;\n}\nh1:hover {\n'+(hov.join('\n')||'  /* no cambia nada */')+'\n}';
+      code='.efecto {\n  transition: all '+d+'s;\n}\n.efecto:hover {\n'+(hov.join('\n')||'  /* no cambia nada */')+'\n}';
       css='#obj{transition:all '+d+'s}#obj:hover,#obj.on{'+(c?'color:orange;':'')+(t?'font-size:45px;':'')+'}';
       $('pista').textContent='Pasa el ratón por encima (en el móvil, tócalo)';
       if(!c&&!t) lect='Si en <code>:hover</code> no cambias ninguna propiedad, no hay nada que animar.';
@@ -100,7 +100,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
     }else{
       var e=$('ef').value, d2=+$('dA').value, inf=$('inf').checked;
       $('vdA').textContent=d2+'s';
-      code='@keyframes '+e+' {\n'+FX[e]+'\n}\nh1 {\n  animation: '+e+' '+d2+'s'+(inf?' infinite':'')+';\n}';
+      code='@keyframes '+e+' {\n'+FX[e]+'\n}\n.efecto {\n  display: inline-block;\n  animation: '+e+' '+d2+'s'+(inf?' infinite':'')+';\n}';
       css='@keyframes '+e+'{'+FX[e].replace(/\n/g,'')+'}#obj.go{animation:'+e+' '+d2+'s'+(inf?' infinite':'')+'}';
       $('pista').textContent=inf?'Se repite sola, sin tocar nada':'Se reproduce una vez al cargar: pulsa «Reproducir» para verla otra vez';
       lect = inf ? 'Con <code>infinite</code> no para nunca. Úsalo en <strong>un</strong> elemento: si hay varios moviéndose a la vez, la página marea.'

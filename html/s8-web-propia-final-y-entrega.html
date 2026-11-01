@@ -64,11 +64,12 @@
   <li><strong>Estructura HTML correcta:</strong> <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;head&gt;</code> con <code>&lt;title&gt;</code> y <code>&lt;meta charset&gt;</code>, y <code>&lt;body&gt;</code>.</li>
   <li><strong>Contenido:</strong> títulos, párrafos, al menos una lista y al menos un enlace (con <code>target="_blank" rel="noopener"</code>).</li>
   <li><strong>Al menos una imagen con licencia libre</strong>, con su <code>alt</code> y su <strong>atribución</strong>.</li>
-  <li><strong>Estilo con CSS:</strong> colores, tipo de letra y alguna clase o id.</li>
+  <li><strong>Estilo con CSS:</strong> colores, tipo de letra y alguna clase o id. Mejor en <code>estilos.css</code>, enlazado con <code>&lt;link&gt;</code> (si en la S6 no te salió, inténtalo ahora: también cuenta para las prácticas).</li>
   <li><strong>Al menos una animación</strong> (transición <code>:hover</code>, animación <code>@keyframes</code>, GIF o vídeo).</li>
 </ul>
+<p>Además, <strong>tres comentarios</strong> en el código (lo ves más abajo).</p>
 
-<h2>Checklist de licencias (revísala antes de entregar)</h2>
+<h2>Checklist de licencias (revísala antes de entregar; no hay que entregarla)</h2>
 <div class="bloque bloque-formula">
   <p class="bloque-titulo">Cada material que no sea tuyo, en regla</p>
   <p>Repasa <strong>una por una</strong> todas las imágenes, GIF o vídeos de tu página y comprueba que cada uno cumple:</p>
@@ -76,34 +77,37 @@
     <thead><tr><th>Comprobación</th><th>¿Cumple?</th></tr></thead>
     <tbody>
       <tr><td>Procede de un banco libre (Openverse, Pixabay…) o es de creación propia.</td><td>Sí / No</td></tr>
-      <tr><td>Tiene licencia que permite reutilizarlo (CC o de dominio público).</td><td>Sí / No</td></tr>
+      <tr><td>Tiene licencia que permite reutilizarlo: CC, dominio público o la licencia de Pixabay (en la atribución escribe «Licencia de Pixabay»).</td><td>Sí / No</td></tr>
       <tr><td>Está <strong>atribuido</strong>: título, autor, licencia y enlace al original.</td><td>Sí / No</td></tr>
       <tr><td>Tiene <code>alt</code> con una descripción (las imágenes).</td><td>Sí / No</td></tr>
     </tbody>
   </table>
-  <p>Si algún material tiene un «No», <strong>cámbialo</strong> por uno libre o quítalo. Un material sin licencia clara no debe ir en la entrega.</p>
+  <p>Si algún material tiene un «No», <strong>cámbialo</strong> por uno libre o quítalo. Un material sin licencia clara no debe ir en la entrega. Lo que se evalúa es lo que se ve en tu página: que cada imagen, GIF o vídeo lleve su atribución con los cuatro datos.</p>
+  <p><strong>Para que tu imagen se vea en cualquier ordenador:</strong> en Openverse o Pixabay, clic derecho sobre la imagen → <strong>«Copiar dirección de la imagen»</strong> y pégala en <code>src</code>. Si usas una imagen o un vídeo guardado en tu ordenador, súbelo también a Classroom.</p>
 </div>
 
 <h2>Deja tu trabajo comentado</h2>
 <p>Los <strong>comentarios</strong> HTML no se ven en la página, pero explican tu código. Se escriben así:</p>
 <div class="bloque bloque-resuelto">
 <pre><code>&lt;!-- Aquí va la cabecera de mi página --&gt;</code></pre>
-<p>Pon al menos <strong>tres comentarios</strong> explicando, con tus palabras, qué hace cada parte. Demuestran que la página la has hecho <strong>tú</strong>.</p>
+<p>Pon al menos <strong>tres comentarios</strong> en <code>pagina.html</code> explicando, con tus palabras, qué hace cada parte. Demuestran que la página la has hecho <strong>tú</strong>. (En <code>estilos.css</code> los comentarios se escriben <code>/* así */</code>.)</p>
 </div>
 
 <div class="bloque bloque-actividad">
   <p class="bloque-titulo">Tarea S8 · Tu web final</p>
   <ol>
-    <li>Reúne todo tu trabajo en <strong>una sola página</strong> con los cinco requisitos de arriba.</li>
+    <li>Abre tu <code>s7.html</code> y tu <code>estilos.css</code> (si no están en este ordenador, descárgalos de tu entrega de la S7 en Classroom). Esa es la base de tu página final.</li>
+    <li>Repásala con los cinco requisitos de arriba y arregla lo que falte.</li>
+    <li>Escribe en ella al menos <strong>tres comentarios</strong> <code>&lt;!-- … --&gt;</code>.</li>
     <li>Pasa la <strong>Checklist de entrega</strong> (la tienes en la última página de este material) y corrige lo que falle.</li>
-    <li>Guarda el archivo con el nombre <code>pagina.html</code> y súbelo a Google Classroom.</li>
-    <li>Prepara una <strong>presentación breve</strong> (1–2 minutos) para enseñar tu página a la clase.</li>
+    <li>Guarda la página con el nombre <code>pagina.html</code> y sube a Google Classroom <code>pagina.html</code>, <code>estilos.css</code> y cualquier imagen o vídeo que tengas guardado en tu ordenador.</li>
+    <li>Prepara tu <strong>presentación breve</strong> (mira el recuadro de abajo).</li>
   </ol>
-  <p><strong>Nombre del archivo:</strong> <code>pagina.html</code></p>
-  <p>Con el editor online: para volver a abrir tu archivo anterior y para cambiar el nombre de <code>code.html</code> a <code>pagina.html</code>, sigue los pasos de «Cambiar el nombre del archivo descargado», en la página «Desarrollo web · Inicio».</p>
+  <p><strong>Nombres de los archivos:</strong> <code>pagina.html</code> y <code>estilos.css</code></p>
   <div class="bloque bloque-nota">
-    <p class="bloque-titulo">En la presentación te pueden pedir…</p>
-    <p>…que <strong>cambies algo en directo</strong> (un color, un elemento de una lista) o que expliques qué hace una línea de tu código. Por eso es importante que entiendas lo que has escrito.</p>
+    <p class="bloque-titulo">Tu presentación (1–2 minutos)</p>
+    <p>Cuenta tres cosas: <strong>de qué trata</strong> tu página y por qué elegiste el tema; <strong>qué animación</strong> has puesto (enséñala pasando el ratón); y <strong>qué te costó más</strong> y cómo lo resolviste.</p>
+    <p>Después te pediremos que <strong>cambies algo en directo</strong> (un color, un elemento de una lista) o que expliques qué hace una línea de tu código. Por eso es importante que entiendas lo que has escrito. Si hoy no da tiempo a que presentéis todos, se termina al principio de la clase siguiente.</p>
   </div>
 </div>
 
