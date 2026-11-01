@@ -2,15 +2,15 @@
 <html lang="es" id="exe-index">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="eXeLearning v4.0.5">
+<meta name="generator" content="eXeLearning v4.0.6">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
 <title>Desarrollo web: HTML, CSS y animación</title>
 <link rel="icon" type="image/x-icon" href="libs/favicon.ico">
 <meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
 <script>document.querySelector("html").classList.add("js");</script><script src="libs/jquery/jquery.min.js"> </script><script src="libs/common_i18n.js"> </script><script src="libs/common.js"> </script><script src="libs/exe_export.js"> </script><script src="libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
 <script src="idevices/text/text.js"></script><link rel="stylesheet" href="idevices/text/text.css">
-<link rel="stylesheet" href="content/css/base.css"><script src="theme/style.js"> </script>
-<script src="theme/zzz-majuelo.js"> </script><link rel="stylesheet" href="theme/style.css"><link rel="stylesheet" href="theme/zzz-majuelo.css">
+<link rel="stylesheet" href="content/css/base.css"><script src="theme/style.js"> </script><script src="theme/zzz-majuelo.js"> </script><link rel="stylesheet" href="theme/style.css"><link rel="stylesheet" href="theme/zzz-majuelo.css">
 </head>
 <body class="exe-export exe-web-site">
 <script>document.body.className+=" js"</script>
@@ -61,9 +61,9 @@
 <h2>¿Qué vas a conseguir?</h2>
 <p>Al terminar tendrás una <strong>página web personal</strong> hecha por ti, con:</p>
 <ul>
-  <li>Una <strong>estructura</strong> correcta en HTML (títulos, párrafos, listas, enlaces, tablas).</li>
+  <li>Una <strong>estructura</strong> correcta en HTML (títulos, párrafos, listas y enlaces).</li>
   <li>Al menos una <strong>imagen con licencia libre</strong>, correctamente atribuida.</li>
-  <li>Un <strong>estilo</strong> propio con CSS (colores, fuentes, disposición).</li>
+  <li>Un <strong>estilo</strong> propio con CSS (colores, tipos de letra, bordes y márgenes).</li>
   <li>Al menos una <strong>animación</strong> web (transición o animación CSS).</li>
 </ul>
 <p>La entregarás en <strong>Google Classroom</strong> y la enseñarás en una presentación breve a la clase.</p>
@@ -91,21 +91,29 @@
   <p>Entra aquí: <a href="https://htmlcoderunner.com/es/" target="_blank" rel="noopener">htmlcoderunner.com/es</a></p>
   <p><strong>Cómo se usa (3 pasos):</strong></p>
   <ol>
-    <li><strong>Escribe</strong> tu código HTML (y el CSS) en el recuadro de la izquierda.</li>
+    <li><strong>Borra</strong> el ejemplo que trae el editor al abrirse y <strong>escribe</strong> tu código HTML (y el CSS) en el recuadro de la izquierda.</li>
     <li>Pulsa <strong>«Ejecutar» (Run)</strong> para ver el resultado al instante a la derecha.</li>
     <li>Cuando termines, pulsa <strong>«Descargar» (Download)</strong>: se guardará en tu carpeta de descargas un archivo llamado <code>code.html</code>. Antes de subirlo a Google Classroom, cámbiale el nombre por el de la sesión: tienes los pasos más abajo, en «Cambiar el nombre del archivo descargado».</li>
   </ol>
   <p><strong>Consejo:</strong> el editor <em>no guarda tu trabajo solo</em>. Descarga tu archivo antes de cerrar la pestaña.</p>
+  <p><strong>Ojo a partir de la S6:</strong> cuando tu CSS pase a un archivo aparte (<code>estilos.css</code>), el editor online ya no lo ve. Desde ese momento trabaja con <strong>Pluma</strong> y mira el resultado en el navegador pulsando <strong>F5</strong>.</p>
 </div>
 <div class="bloque bloque-nota">
   <p class="bloque-titulo">Opción B · Editor «Pluma» del aula</p>
-  <p>En los ordenadores del aula tienes el editor de texto <strong>Pluma</strong>. Escribe el código, usa <em>Archivo → Guardar</em> y ponle un nombre que termine en <code>.html</code>. Después haz doble clic en el archivo para abrirlo en el navegador. Cada vez que cambies el código, guarda y pulsa <strong>F5</strong> en el navegador para actualizar.</p>
+  <p>En los ordenadores del aula tienes el editor de texto <strong>Pluma</strong>. Lo abres desde el menú <em>Aplicaciones → Accesorios → Pluma</em>. Escribe el código, usa <em>Archivo → Guardar</em>, elige siempre la carpeta <strong>Descargas</strong> (así lo tendrás todo en el mismo sitio) y ponle un nombre que termine en <code>.html</code>. Después haz doble clic en el archivo para abrirlo en el navegador. Cada vez que cambies el código, guarda y pulsa <strong>F5</strong> en el navegador para actualizar.</p>
 </div>
 
 <h2>Cómo entregar tu trabajo</h2>
 <div class="bloque bloque-actividad">
   <p class="bloque-titulo">Todo se entrega en Google Classroom</p>
-  <p>Todas las tareas de esta unidad se entregan en <strong>Google Classroom</strong>, en la tarea que corresponda. Salvo que se diga otra cosa, subirás el archivo <code>.html</code> que hayas creado (o el que te descargues del editor online).</p>
+  <p>Todas las tareas de esta unidad se entregan en <strong>Google Classroom</strong>, en la tarea que corresponda. Salvo que se diga otra cosa, subirás el archivo <code>.html</code> que hayas creado (o el que te descargues del editor online). Desde la S6 subirás <strong>dos archivos</strong>: tu página y <code>estilos.css</code>.</p>
+  <p><strong>Cómo subir tus archivos:</strong></p>
+  <ol>
+    <li>Abre la tarea en Classroom y pulsa <strong>«+ Añadir o crear»</strong>.</li>
+    <li>Elige <strong>«Archivo»</strong> y busca tus archivos en la carpeta <strong>Descargas</strong>. Puedes elegir varios a la vez.</li>
+    <li>Comprueba que aparecen todos en la tarea y pulsa <strong>«Entregar»</strong>.</li>
+  </ol>
+  <p><strong>¿Ya entregaste y quieres cambiar algo?</strong> Pulsa <strong>«Anular entrega»</strong>, quita el archivo viejo (la ✕ que hay a su lado), añade el nuevo y vuelve a pulsar <strong>«Entregar»</strong>.</p>
 </div>
 <div class="bloque bloque-formula">
   <p class="bloque-titulo">Cómo nombrar tus archivos (¡muy importante!)</p>
@@ -119,8 +127,8 @@
       <tr><td>S4</td><td><code>s4.html</code></td></tr>
       <tr><td>S5</td><td><code>s5.html</code></td></tr>
       <tr><td>S6</td><td><code>s6.html</code> y <code>estilos.css</code></td></tr>
-      <tr><td>S7</td><td><code>s7.html</code></td></tr>
-      <tr><td>S8</td><td><code>pagina.html</code> (tu página final)</td></tr>
+      <tr><td>S7</td><td><code>s7.html</code> y <code>estilos.css</code></td></tr>
+      <tr><td>S8</td><td><code>pagina.html</code> (tu página final) y <code>estilos.css</code></td></tr>
     </tbody>
   </table>
 </div>
@@ -134,6 +142,7 @@
     <li>Comprueba que se llama exactamente <code>s3.html</code>: ni <code>s3.html.html</code> ni <code>s3</code> a secas.</li>
   </ol>
   <p>Si has descargado varias veces, verás <code>code (1).html</code>, <code>code (2).html</code>…: el de número más alto es el último. Renombra ese.</p>
+  <p><strong>¿No encuentras tu archivo de la sesión anterior?</strong> (has cambiado de ordenador, o se ha borrado) Entra en Classroom, abre la tarea de esa sesión, haz clic en tu archivo y pulsa <strong>Descargar</strong>. Se guardará en Descargas. Si tenías también <code>estilos.css</code>, descárgalo igual.</p>
   <p><strong>Para seguir otro día con tu página:</strong> clic derecho sobre tu archivo, <strong>«Abrir con» → Pluma</strong>. Copia todo el código y pégalo en el editor online.</p>
   <p>Con Pluma no hace falta renombrar: el nombre lo pones tú al guardar.</p>
 </div>

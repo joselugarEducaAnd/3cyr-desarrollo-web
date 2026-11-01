@@ -2,8 +2,9 @@
 <html lang="es" id="exe-page-web3-06">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="eXeLearning v4.0.5">
+<meta name="generator" content="eXeLearning v4.0.6">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
 <title>S6 · Selectores y estilos CSS | Desarrollo web: HTML, CSS y animación</title>
 <link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
 <meta name="description" content="Unidad de desarrollo web (HTML, CSS y animación) para 3.º de ESO (Computación y Robótica). SdA «Tu sitio en la red: páginas web con movimiento».">
@@ -11,8 +12,7 @@
 <script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
 <script src="../idevices/classify/classify.js"></script><link rel="stylesheet" href="../idevices/classify/classify.css">
 <script src="../libs/jquery-ui/jquery-ui.min.js"> </script>
-<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script>
-<script src="../theme/zzz-majuelo.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><script src="../theme/zzz-majuelo.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
 </head>
 <body class="exe-export exe-web-site">
 <script>document.body.className+=" js"</script>
@@ -66,25 +66,28 @@
   <tbody>
     <tr><td>De <strong>etiqueta</strong></td><td>A todas las etiquetas de ese tipo.</td><td><code>p { ... }</code></td></tr>
     <tr><td>De <strong>clase</strong></td><td>A las etiquetas que tengan ese <code>class</code>. Puede repetirse.</td><td><code>.destacado { ... }</code></td></tr>
-    <tr><td>De <strong>identificador</strong></td><td>A un <strong>único</strong> elemento con ese <code>id</code>.</td><td><code>#cabecera { ... }</code></td></tr>
+    <tr><td>De <strong>identificador</strong></td><td>A un <strong>único</strong> elemento con ese <code>id</code>.</td><td><code>#portada { ... }</code></td></tr>
   </tbody>
 </table>
 <div class="bloque bloque-resuelto">
-  <p class="bloque-titulo">Clases e identificadores (cópialo)</p>
-<pre><code>&lt;!-- HTML --&gt;
-&lt;p class=&quot;destacado&quot;&gt;Este párrafo es especial.&lt;/p&gt;
-&lt;p id=&quot;cabecera&quot;&gt;Solo hay uno como este.&lt;/p&gt;
-
-&lt;!-- CSS --&gt;
-.destacado { color: orange; font-weight: bold; }
-#cabecera  { background-color: #453f93; color: white; }</code></pre>
-<p>La <strong>clase</strong> se marca con un punto (<code>.</code>) y puede estar en muchas etiquetas. El <strong>id</strong> se marca con almohadilla (<code>#</code>) y debe ser único en la página.</p>
+  <p class="bloque-titulo">Clases e identificadores (cópialo en dos sitios)</p>
+  <p><strong>1. En tu página</strong>, dentro de <code>&lt;body&gt;</code>, pones el nombre a los elementos:</p>
+<pre><code>&lt;p class=&quot;destacado&quot;&gt;Este párrafo es especial.&lt;/p&gt;
+&lt;p id=&quot;portada&quot;&gt;Solo hay uno como este.&lt;/p&gt;</code></pre>
+  <p><strong>2. En tu CSS</strong> (dentro de <code>&lt;style&gt;</code>, o en <code>estilos.css</code> cuando lo tengas) escribes su estilo:</p>
+<pre><code>.destacado { color: orange; font-weight: bold; }
+#portada { background-color: #453f93; color: white; }</code></pre>
+<p>La <strong>clase</strong> se marca con un punto (<code>.</code>) y puede estar en muchas etiquetas. El <strong>id</strong> se marca con almohadilla (<code>#</code>) y debe ser único en la página. <code>font-weight: bold</code> pone el texto en <strong>negrita</strong>.</p>
 </div>
 
 <h2>Combinar selectores</h2>
 <div class="bloque bloque-resuelto">
-<pre><code>h1, h2, .destacado { color: green; }  /* a varios a la vez, separados por comas */
-p.aviso { text-decoration: underline; } /* solo los párrafos con class=&quot;aviso&quot; */</code></pre>
+<pre><code>/* a varios a la vez, separados por comas */
+h1, h2 { font-family: Verdana, sans-serif; }
+
+/* solo los párrafos con class=&quot;aviso&quot; */
+p.aviso { text-decoration: underline; }</code></pre>
+<p><code>text-decoration: underline</code> subraya el texto.</p>
 </div>
 
 <h2>El modelo de caja</h2>
@@ -118,6 +121,7 @@ p.aviso { text-decoration: underline; } /* solo los párrafos con class=&quot;av
 <script>(function(){function ajusta(){var fs=document.querySelectorAll("iframe.cyr02-caja");for(var i=0;i<fs.length;i++){var f=fs[i];if(!f.getBoundingClientRect().width)continue;try{var d=f.contentDocument,a=d&&d.querySelector(".wg");if(!a)continue;var h=Math.ceil(a.getBoundingClientRect().height+24);if(h>200&&Math.abs(h-f.clientHeight)>4)f.style.height=h+"px";}catch(e){}}}document.addEventListener("click",function(){setTimeout(ajusta,120);setTimeout(ajusta,600);},true);window.addEventListener("load",function(){ajusta();setTimeout(ajusta,400);});window.addEventListener("resize",function(){setTimeout(ajusta,150);});setInterval(ajusta,1000);})();</script>
 <iframe class="cyr02-caja" src="../content/resources/widgets/widget_modelo_caja.html" title="Pruébalo tú: el modelo de caja" width="100%" loading="lazy"></iframe>
   <p>El <code>padding</code> y el <code>border</code> hacen la caja más grande aunque el contenido mida lo mismo; el <code>margin</code> solo la separa de lo que tiene alrededor.</p>
+  <p><strong>En tu página</strong> un párrafo o un título ya ocupa todo el ancho: al ponerle <code>padding</code> no se ensancha, sino que gana alto y el texto se separa del borde. Pruébalo en un <code>&lt;p&gt;</code> o en un <code>&lt;h2&gt;</code>.</p>
 </div>
 
 <h2>Una hoja de estilos externa</h2>
@@ -130,11 +134,11 @@ p.aviso { text-decoration: underline; } /* solo los párrafos con class=&quot;av
 
 <div class="bloque bloque-actividad">
   <p class="bloque-titulo">Tarea S6 · Selectores y hoja externa</p>
-  <p>Parte de tu <code>s5.html</code> y trabaja con selectores:</p>
+  <p>Parte de tu <code>s5.html</code> (si no está en este ordenador, descárgalo de tu entrega de la S5 en Classroom) y trabaja con selectores:</p>
   <ol>
     <li>Crea una <strong>clase</strong> (por ejemplo <code>destacado</code>) y aplícala a algún elemento.</li>
     <li>Da estilo a un elemento único con un <strong>id</strong>.</li>
-    <li>Usa <code>margin</code>, <code>padding</code> o <code>border</code> en algún bloque.</li>
+    <li>Usa <code>margin</code>, <code>padding</code> o <code>border</code> en un párrafo, un título o tu lista.</li>
     <li><strong>Mueve tu CSS</strong> a un archivo aparte llamado <code>estilos.css</code> y enlázalo con <code>&lt;link&gt;</code>.</li>
   </ol>
   <p>Guarda la página como <code>s6.html</code> y súbela junto con <code>estilos.css</code> a Google Classroom.</p>
@@ -150,11 +154,15 @@ p.aviso { text-decoration: underline; } /* solo los párrafos con class=&quot;av
       <li>Abre <code>s6.html</code> con Pluma (clic derecho, <strong>«Abrir con» → Pluma</strong>). Borra el bloque <code>&lt;style&gt;…&lt;/style&gt;</code> y pon en su lugar, dentro del <code>&lt;head&gt;</code>, la línea <code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code>. Guarda.</li>
       <li>Haz doble clic en <code>s6.html</code>: se abre en el navegador. Si se ven tus colores y tipos de letra, el enlace funciona. En el editor online no se verán, porque allí no está <code>estilos.css</code>.</li>
     </ol>
-    <p>Sube los <strong>dos</strong> archivos a la tarea de Google Classroom.</p>
+    <p>Sube los <strong>dos</strong> archivos a la tarea de Google Classroom: <strong>«+ Añadir o crear» → «Archivo»</strong>, elige <code>s6.html</code> y <code>estilos.css</code> y pulsa <strong>«Entregar»</strong>.</p>
+  </div>
+  <div class="bloque bloque-nota">
+    <p class="bloque-titulo">¿No te sale la hoja externa?</p>
+    <p>No pasa nada: entrega hoy tu <code>s6.html</code> con el CSS dentro de <code>&lt;style&gt;</code> y haz lo demás (clase, id y caja). En tu página final (S8) volverás a intentarlo: si allí tu CSS ya está en <code>estilos.css</code> y funciona, <strong>también cuenta para esta tarea</strong>.</p>
   </div>
   <div class="bloque bloque-nota">
     <p class="bloque-titulo">Ampliación (opcional)</p>
-    <p>Investiga el selector <code>p.clase</code> (etiqueta + clase) y crea una regla que solo afecte a los párrafos con una clase concreta.</p>
+    <p>Haz que tu clase <code>destacado</code> tenga un borde de 3 px y las esquinas redondeadas con <code>border-radius: 10px;</code>. Después aplica dos clases a la vez a un mismo elemento: <code>class="destacado aviso"</code>.</p>
   </div>
 </div>
 
