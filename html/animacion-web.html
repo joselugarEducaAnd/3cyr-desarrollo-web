@@ -72,8 +72,8 @@
 <div class="bloque bloque-resuelto">
   <p class="bloque-titulo">Poner un GIF animado (cópialo)</p>
 <pre><code>&lt;img src=&quot;pega-aquí-la-dirección-del-GIF&quot; alt=&quot;Balón botando&quot;&gt;
-&lt;p&gt;«Balón» de Ana Ruiz, CC BY, en Openverse&lt;/p&gt;</code></pre>
-<p>Para la dirección: en Openverse abre el GIF, haz clic derecho sobre él → <strong>«Copiar dirección de la imagen»</strong> y pégala entre las comillas. <strong>No lo descargues</strong>: si lo guardas en tu ordenador, en Classroom se verá roto. Un GIF también tiene dueño: debajo, su atribución con los cuatro datos, como en la S4.</p>
+&lt;p&gt;«Balón» de Ana Ruiz, CC BY, &lt;a href=&quot;pega-aquí-el-enlace-de-Openverse&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ver original&lt;/a&gt;&lt;/p&gt;</code></pre>
+<p>Para la dirección: en Openverse abre el GIF, haz clic derecho sobre él → <strong>«Copiar dirección de la imagen»</strong> y pégala entre las comillas. Mejor <strong>no lo descargues</strong>: si lo guardas en tu ordenador, tendrás que subirlo también a Classroom o se verá roto. Un GIF también tiene dueño: debajo, su atribución con los cuatro datos, como en la S4.</p>
 </div>
 
 <h2>Herramientas útiles (web, sin instalar ni cuenta)</h2>
@@ -132,11 +132,10 @@
   50%  { transform: scale(1.1); }  /* a la mitad, más grande */
   100% { transform: scale(1);   }
 }
-.efecto {
-  display: inline-block;            /* para que el efecto funcione */
+.anima {
   animation: latido 1.5s infinite;  /* se repite sin parar */
 }</code></pre>
-<p>Queda mejor en una <strong>imagen</strong> o en un título corto. No funciona en un enlace, un <code>&lt;strong&gt;</code> o un <code>&lt;em&gt;</code> si no le pones <code>display: inline-block</code>.</p>
+<p>Ponle <code>class="anima"</code> a lo que quieras que lata: queda mejor en una <strong>imagen</strong>. Si lo pones en un enlace, un <code>&lt;strong&gt;</code> o un <code>&lt;em&gt;</code>, añade a la regla <code>display: inline-block;</code> (si no, no se mueve).</p>
 </div>
 <div class="bloque bloque-resuelto">
   <p class="bloque-titulo">Otra idea: algo que se desliza al entrar (cópialo en tu CSS)</p>
@@ -155,7 +154,7 @@
 <script>(function(){function ajusta(){var fs=document.querySelectorAll("iframe.cyr02-anim");for(var i=0;i<fs.length;i++){var f=fs[i];if(!f.getBoundingClientRect().width)continue;try{var d=f.contentDocument,a=d&&d.querySelector(".wg");if(!a)continue;var h=Math.ceil(a.getBoundingClientRect().height+24);if(h>200&&Math.abs(h-f.clientHeight)>4)f.style.height=h+"px";}catch(e){}}}document.addEventListener("click",function(){setTimeout(ajusta,120);setTimeout(ajusta,600);},true);window.addEventListener("load",function(){ajusta();setTimeout(ajusta,400);});window.addEventListener("resize",function(){setTimeout(ajusta,150);});setInterval(ajusta,1000);})();</script>
 <iframe class="cyr02-anim" src="../content/resources/widgets/widget_laboratorio_animacion.html" title="Pruébalo tú: laboratorio de animación" width="100%" loading="lazy"></iframe>
   <p>Prueba a poner la transición a 0 segundos: así se ve una página a la que le falta <code>transition</code>.</p>
-  <p>El código del laboratorio va <strong>dentro de tu <code>&lt;style&gt;</code> o en <code>estilos.css</code></strong>, nunca suelto en la página. Usa la clase <code>efecto</code>: ponle <code>class="efecto"</code> a lo que quieras animar.</p>
+  <p>El código del laboratorio va <strong>dentro de tu <code>&lt;style&gt;</code> o en <code>estilos.css</code></strong>, nunca suelto en la página. La transición usa la clase <code>efecto</code> y la animación, la clase <code>anima</code>: ponle esa clase a lo que quieras animar.</p>
 </div>
 
 <div class="bloque bloque-formula">
@@ -175,7 +174,8 @@
     <li><strong>Mínimo común:</strong> una <strong>transición</strong> con <code>:hover</code> (un título o una imagen que cambie de color o tamaño al pasar el ratón).</li>
     <li><strong>Extensión:</strong> una <strong>animación</strong> con <code>@keyframes</code> que se mueva sola, o un <strong>GIF</strong> animado de Openverse con su atribución.</li>
   </ul>
-  <p>Esta tarea ya forma parte de tu <strong>página personal final</strong>. Guarda la página con el nombre <code>s7.html</code> y sube a Google Classroom <strong>los dos archivos</strong>: <code>s7.html</code> y <code>estilos.css</code>.</p>
+  <p><strong>Para la nota más alta:</strong> cambia al menos un valor del ejemplo (color, tamaño, duración o efecto): copiarlo tal cual cuenta menos. Y prepárate para decir qué <strong>formato</strong> de animación has usado y otro que podrías haber usado.</p>
+  <p>Esta tarea ya forma parte de tu <strong>página personal final</strong>. Guarda la página con el nombre <code>s7.html</code> y sube <strong>los dos archivos</strong>, <code>s7.html</code> y <code>estilos.css</code>, a la tarea <strong>«Web propia»</strong> de Classroom (no a la de las prácticas). Si tu CSS sigue dentro de <code>&lt;style&gt;</code>, sube solo <code>s7.html</code>.</p>
   <p><strong>Nombres de los archivos:</strong> <code>s7.html</code> y <code>estilos.css</code></p>
 </div>
 

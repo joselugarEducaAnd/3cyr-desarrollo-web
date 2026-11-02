@@ -100,7 +100,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
     }else{
       var e=$('ef').value, d2=+$('dA').value, inf=$('inf').checked;
       $('vdA').textContent=d2+'s';
-      code='@keyframes '+e+' {\n'+FX[e]+'\n}\n.efecto {\n  display: inline-block;\n  animation: '+e+' '+d2+'s'+(inf?' infinite':'')+';\n}';
+      code='@keyframes '+e+' {\n'+FX[e]+'\n}\n.anima {\n  animation: '+e+' '+d2+'s'+(inf?' infinite':'')+';\n}';
       css='@keyframes '+e+'{'+FX[e].replace(/\n/g,'')+'}#obj.go{animation:'+e+' '+d2+'s'+(inf?' infinite':'')+'}';
       $('pista').textContent=inf?'Se repite sola, sin tocar nada':'Se reproduce una vez al cargar: pulsa «Reproducir» para verla otra vez';
       lect = inf ? 'Con <code>infinite</code> no para nunca. Úsalo en <strong>un</strong> elemento: si hay varios moviéndose a la vez, la página marea.'
